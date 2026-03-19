@@ -1,0 +1,3078 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Solidus 3D Modeling | Professional 3D CAD Modeling &amp; Design Services Worldwide</title>
+  <meta name="description"
+    content="Solidus 3D Modeling &mdash; professional 3D CAD design, 2D to 3D conversion, sculpture, BJD doll design, print-ready models and architectural modeling for B2B clients in 15+ countries. NDA-protected.">
+  <meta name="keywords"
+    content="3D modeling,CAD design,2D to 3D conversion,sculpture design,BJD doll design,3D rendering,mechanical modeling,architectural 3D model,B2B 3D services">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Solidus 3D Modeling | 3D CAD Design Worldwide">
+  <meta property="og:description"
+    content="Precision 3D CAD modeling for B2B clients in 15+ countries. NDA-protected, unlimited revisions.">
+  <meta property="og:image" content="https://solidus3dmodeling.com/solidus_hero.png">
+  <meta property="og:type" content="website">
+  <script
+    type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Solidus 3D Modeling","url":"https://solidus3dmodeling.com","email":"info@solidus3dmodeling.com","telephone":"+917888091843","address":{"@type":"PostalAddress","streetAddress":"Peenya Industrial Area, Phase IV","addressRegion":"Karnataka","postalCode":"560058","addressCountry":"IN"},"areaServed":"Worldwide"}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <style>
+    :root {
+      --ink: #0e0e0e;
+      --paper: #f5f2ee;
+      --cream: #ede9e3;
+      --cyan: #00c8b4;
+      --cyan2: #00ffe8;
+      --mid: #6b6b6b;
+      --light: #ccc8c0;
+      --white: #fff;
+      --D: 'Bebas Neue', sans-serif;
+      --B: 'DM Sans', sans-serif;
+      --M: 'DM Mono', monospace
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--B);
+      overflow-x: hidden;
+      cursor: none
+    }
+
+    #cur {
+      position: fixed;
+      width: 12px;
+      height: 12px;
+      background: var(--cyan);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: width .2s, height .2s;
+      mix-blend-mode: multiply
+    }
+
+    #curR {
+      position: fixed;
+      width: 36px;
+      height: 36px;
+      border: 1.5px solid var(--ink);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9998;
+      transform: translate(-50%, -50%);
+      opacity: .28
+    }
+
+    .rv {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity .7s, transform .7s
+    }
+
+    .rv.on {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    .rl {
+      opacity: 0;
+      transform: translateX(-32px);
+      transition: opacity .7s, transform .7s
+    }
+
+    .rr {
+      opacity: 0;
+      transform: translateX(32px);
+      transition: opacity .7s, transform .7s
+    }
+
+    .rl.on,
+    .rr.on {
+      opacity: 1;
+      transform: translateX(0)
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 500;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      height: 68px;
+      background: rgba(245, 242, 238, .96);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(0, 0, 0, .08);
+      transition: box-shadow .3s
+    }
+
+    nav.sc {
+      box-shadow: 0 2px 24px rgba(0, 0, 0, .07)
+    }
+
+    .logo {
+      font-family: var(--D);
+      font-size: 26px;
+      letter-spacing: .06em;
+      color: var(--ink);
+      text-decoration: none
+    }
+
+    .logo b {
+      color: var(--cyan)
+    }
+
+    .nl {
+      display: flex;
+      gap: 4px;
+      list-style: none;
+      margin: 0;
+      align-items: center
+    }
+
+    .nl>li {
+      position: relative
+    }
+
+    .nl>li>a {
+      font-family: var(--M);
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--mid);
+      text-decoration: none;
+      padding: 8px 14px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: color .2s;
+      border-radius: 4px
+    }
+
+    .nl>li>a:hover {
+      color: var(--ink);
+      background: rgba(0, 0, 0, .04)
+    }
+
+    .nav-arr {
+      font-size: 8px;
+      transition: transform .2s;
+      opacity: .5
+    }
+
+    .dd {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      background: var(--white);
+      border: 1px solid rgba(0, 0, 0, .09);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, .1);
+      min-width: 252px;
+      padding: 8px 0;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      transition: opacity .2s, transform .2s, visibility .2s;
+      z-index: 600;
+      border-radius: 8px
+    }
+
+    .nl>li:hover .dd {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0)
+    }
+
+    .nl>li:hover .nav-arr {
+      transform: rotate(180deg)
+    }
+
+    .dd a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 11px 20px;
+      font-size: 13px;
+      color: var(--ink);
+      text-decoration: none;
+      transition: background .15s, color .15s
+    }
+
+    .dd a:hover {
+      background: rgba(0, 200, 180, .07);
+      color: var(--cyan)
+    }
+
+    .dd-div {
+      height: 1px;
+      background: rgba(0, 0, 0, .06);
+      margin: 5px 0
+    }
+
+    .dd svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0
+    }
+
+    .nbtn {
+      background: var(--ink);
+      color: var(--paper);
+      font-family: var(--M);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      padding: 11px 24px;
+      border: none;
+      cursor: none;
+      text-decoration: none;
+      transition: background .2s
+    }
+
+    .nbtn:hover {
+      background: var(--cyan);
+      color: var(--ink)
+    }
+
+    .ham {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px
+    }
+
+    .ham span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--ink);
+      transition: all .3s
+    }
+
+    .mob {
+      position: fixed;
+      top: 68px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--paper);
+      z-index: 450;
+      display: flex;
+      flex-direction: column;
+      padding: 40px 32px;
+      gap: 20px;
+      transform: translateX(100%);
+      transition: transform .3s
+    }
+
+    .mob.open {
+      transform: translateX(0)
+    }
+
+    .mob a {
+      font-family: var(--D);
+      font-size: 2.2rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none
+    }
+
+    .mob a:hover {
+      color: var(--cyan)
+    }
+
+    /* HERO */
+    #hero {
+      padding-top: 68px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden
+    }
+
+    .hbg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: linear-gradient(135deg, #f0ece6, #e8e3dc 60%, #ddd7ce);
+      overflow: hidden
+    }
+
+    .hbg::before {
+      content: '';
+      position: absolute;
+      left: -80px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 480px;
+      height: 480px;
+      background: radial-gradient(ellipse, rgba(0, 200, 180, .07), transparent 70%);
+      border-radius: 50%
+    }
+
+    .hbg::after {
+      content: '';
+      position: absolute;
+      right: -60px;
+      top: 40%;
+      transform: translateY(-50%);
+      width: 420px;
+      height: 420px;
+      background: radial-gradient(ellipse, rgba(0, 0, 0, .04), transparent 70%);
+      border-radius: 50%
+    }
+
+    .hpart {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      z-index: 1;
+      width: 320px;
+      height: 320px;
+      object-fit: contain;
+      opacity: .6;
+      filter: grayscale(15%) contrast(1.1)
+    }
+
+    .hpl {
+      left: -10px;
+      animation: fl 7s ease-in-out infinite
+    }
+
+    .hpr {
+      right: -10px;
+      transform: translateY(-50%) scaleX(-1);
+      animation: fr 7s ease-in-out infinite .9s
+    }
+
+    @keyframes fl {
+
+      0%,
+      100% {
+        transform: translateY(-50%) rotate(-2deg)
+      }
+
+      50% {
+        transform: translateY(calc(-50% - 14px)) rotate(1deg)
+      }
+    }
+
+    @keyframes fr {
+
+      0%,
+      100% {
+        transform: translateY(-50%) scaleX(-1) rotate(2deg)
+      }
+
+      50% {
+        transform: translateY(calc(-50% - 12px)) scaleX(-1) rotate(-1deg)
+      }
+    }
+
+    .hc {
+      position: relative;
+      z-index: 2;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 48px
+    }
+
+    .hpill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0, 200, 180, .12);
+      border: 1px solid rgba(0, 200, 180, .3);
+      border-radius: 980px;
+      padding: 6px 18px;
+      font-family: var(--M);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(0, 0, 0, .65);
+      margin-bottom: 28px
+    }
+
+    .hpill::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      background: var(--cyan);
+      border-radius: 50%;
+      animation: bk 1.6s ease-in-out infinite
+    }
+
+    @keyframes bk {
+
+      0%,
+      100% {
+        opacity: 1
+      }
+
+      50% {
+        opacity: .2
+      }
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 6vw, 6rem);
+      font-weight: 700;
+      letter-spacing: -.03em;
+      line-height: 1.05;
+      color: var(--ink);
+      margin-bottom: 20px;
+      font-family: var(--B)
+    }
+
+    h1 span {
+      color: var(--cyan)
+    }
+
+    .htag {
+      font-size: clamp(1rem, 1.8vw, 1.25rem);
+      color: var(--mid);
+      font-weight: 300;
+      max-width: 560px;
+      margin: 0 auto 36px;
+      line-height: 1.75
+    }
+
+    .htag b {
+      color: var(--ink);
+      font-weight: 500
+    }
+
+    .hact {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 44px
+    }
+
+    .ctap {
+      background: var(--ink);
+      color: var(--white);
+      font-family: var(--B);
+      font-size: 15px;
+      font-weight: 500;
+      padding: 15px 36px;
+      border-radius: 4px;
+      text-decoration: none;
+      cursor: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: background .2s, transform .15s
+    }
+
+    .ctap:hover {
+      background: var(--cyan);
+      color: var(--ink);
+      transform: translateY(-2px)
+    }
+
+    .ctag {
+      background: transparent;
+      color: var(--ink);
+      font-family: var(--B);
+      font-size: 15px;
+      font-weight: 500;
+      padding: 14px 32px;
+      border-radius: 4px;
+      border: 1.5px solid rgba(0, 0, 0, .2);
+      text-decoration: none;
+      cursor: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: border-color .2s, background .2s
+    }
+
+    .ctag:hover {
+      border-color: var(--cyan);
+      background: rgba(0, 200, 180, .05)
+    }
+
+    .hbadges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 16px
+    }
+
+    .hb {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-family: var(--M);
+      font-size: 10px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgba(0, 0, 0, .55);
+      padding: 6px 14px;
+      border: 1px solid rgba(0, 0, 0, .12);
+      border-radius: 4px;
+      background: rgba(255, 255, 255, .6);
+      transition: background .2s, border-color .2s
+    }
+
+    .hb:hover {
+      background: rgba(255, 255, 255, .9);
+      border-color: var(--cyan)
+    }
+
+    .bdot {
+      width: 6px;
+      height: 6px;
+      background: var(--cyan);
+      border-radius: 50%;
+      flex-shrink: 0
+    }
+
+    .hnote {
+      font-size: 11px;
+      color: var(--mid);
+      font-family: var(--M);
+      letter-spacing: .06em;
+      opacity: .65
+    }
+
+    /* MARQUEE */
+    .mq {
+      background: var(--ink);
+      overflow: hidden;
+      padding: 14px 0
+    }
+
+    .mqt {
+      display: flex;
+      white-space: nowrap;
+      animation: mq 28s linear infinite
+    }
+
+    .mqi {
+      flex-shrink: 0;
+      padding: 0 36px;
+      font-family: var(--D);
+      font-size: 1rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .3)
+    }
+
+    .mqs {
+      color: var(--cyan);
+      margin: 0 12px
+    }
+
+    @keyframes mq {
+      from {
+        transform: translateX(0)
+      }
+
+      to {
+        transform: translateX(-50%)
+      }
+    }
+
+    /* STATS */
+    #sb {
+      background: var(--white);
+      border-bottom: 1px solid rgba(0, 0, 0, .07)
+    }
+
+    .sg {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      max-width: 1200px;
+      margin: 0 auto
+    }
+
+    .sc2 {
+      padding: 40px 24px;
+      text-align: center;
+      border-right: 1px solid rgba(0, 0, 0, .07)
+    }
+
+    .sc2:last-child {
+      border-right: none
+    }
+
+    .sn {
+      font-family: var(--D);
+      font-size: clamp(2.5rem, 4vw, 3.8rem);
+      color: var(--ink);
+      letter-spacing: .02em;
+      display: block;
+      line-height: 1
+    }
+
+    .sl {
+      display: block;
+      font-family: var(--M);
+      font-size: 10px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-top: 6px
+    }
+
+    .ss {
+      display: block;
+      font-size: .78rem;
+      color: var(--light);
+      font-weight: 300;
+      margin-top: 3px
+    }
+
+    /* SHARED SECTION */
+    .sw {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 48px
+    }
+
+    .sk {
+      font-family: var(--M);
+      font-size: 11px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px
+    }
+
+    .sk::before {
+      content: '//'
+    }
+
+    h2 {
+      font-family: var(--D);
+      font-size: clamp(2.5rem, 4.5vw, 4.5rem);
+      line-height: .92;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+      color: var(--ink)
+    }
+
+    .sdesc {
+      font-size: .95rem;
+      color: var(--mid);
+      font-weight: 300;
+      line-height: 1.75;
+      max-width: 500px
+    }
+
+    /* SERVICES */
+    #services {
+      padding: 100px 0;
+      background: var(--paper)
+    }
+
+    .sh {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: end;
+      margin-bottom: 64px
+    }
+
+    .svl {
+      display: flex;
+      flex-direction: column;
+      gap: 0
+    }
+
+    .svr {
+      display: grid;
+      grid-template-columns: 96px 1fr 28px;
+      gap: 28px;
+      align-items: start;
+      padding: 36px 0;
+      border-top: 1px solid rgba(0, 0, 0, .09);
+      position: relative;
+      cursor: none;
+      transition: background .2s
+    }
+
+    .svr::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 0;
+      background: var(--cyan);
+      opacity: .05;
+      transition: width .4s
+    }
+
+    .svr:hover::before {
+      width: 100%
+    }
+
+    .svic {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-top: 4px
+    }
+
+    .svn {
+      font-family: var(--D);
+      font-size: 3rem;
+      color: var(--ink);
+      opacity: .15;
+      line-height: 1;
+      transition: color .3s, opacity .3s;
+      margin-bottom: 8px
+    }
+
+    .svr:hover .svn {
+      color: var(--cyan);
+      opacity: 1
+    }
+
+    .svi {
+      width: 48px;
+      height: 48px;
+      display: block
+    }
+
+    .svi svg {
+      width: 100%;
+      height: 100%
+    }
+
+    .svb h3 {
+      font-family: var(--D);
+      font-size: 2rem;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      color: var(--ink);
+      line-height: 1.05
+    }
+
+    .svb p {
+      font-size: .92rem;
+      color: var(--mid);
+      font-weight: 300;
+      line-height: 1.75;
+      max-width: 540px
+    }
+
+    .svts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 14px
+    }
+
+    .svt {
+      font-family: var(--M);
+      font-size: 9px;
+      letter-spacing: .12em;
+      border: 1px solid rgba(0, 0, 0, .12);
+      padding: 3px 9px;
+      color: var(--mid);
+      text-transform: uppercase;
+      background: rgba(255, 255, 255, .5)
+    }
+
+    .sva {
+      font-size: 22px;
+      color: var(--light);
+      padding-top: 12px;
+      transition: color .3s, transform .3s;
+      font-style: normal;
+      text-decoration: none
+    }
+
+    .svr:hover .sva {
+      color: var(--cyan);
+      transform: translate(4px, -4px)
+    }
+
+    /* PORTFOLIO */
+    #portfolio {
+      padding: 100px 0;
+      background: var(--cream)
+    }
+
+    .ph {
+      text-align: center;
+      margin-bottom: 48px
+    }
+
+    .pf {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 48px
+    }
+
+    .pfb {
+      font-family: var(--M);
+      font-size: 10px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: 8px 18px;
+      border: 1px solid rgba(0, 0, 0, .12);
+      background: transparent;
+      color: var(--mid);
+      cursor: none;
+      transition: all .2s;
+      border-radius: 2px
+    }
+
+    .pfb.ac,
+    .pfb:hover {
+      background: var(--ink);
+      color: var(--white);
+      border-color: var(--ink)
+    }
+
+    .pg {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: rgba(0, 0, 0, .06)
+    }
+
+    .pc {
+      background: var(--white);
+      position: relative;
+      overflow: hidden;
+      cursor: none;
+      transition: background .25s
+    }
+
+    .pc:hover {
+      background: var(--paper)
+    }
+
+    .pci {
+      padding: 36px 32px
+    }
+
+    .pci-svg {
+      width: 44px;
+      height: 44px;
+      margin-bottom: 16px;
+      display: block
+    }
+
+    .pci-svg svg {
+      width: 100%;
+      height: 100%
+    }
+
+    .pm {
+      font-family: var(--M);
+      font-size: 9px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 10px;
+      display: block
+    }
+
+    .pc h4 {
+      font-family: var(--D);
+      font-size: 1.5rem;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--ink);
+      margin-bottom: 8px;
+      line-height: 1.1
+    }
+
+    .pc p {
+      font-size: .83rem;
+      color: var(--mid);
+      font-weight: 300;
+      line-height: 1.65
+    }
+
+    .pl {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 16px;
+      font-family: var(--M);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(0, 0, 0, .15);
+      padding-bottom: 2px;
+      transition: color .2s, border-color .2s
+    }
+
+    .pc:hover .pl {
+      color: var(--cyan);
+      border-color: var(--cyan)
+    }
+
+    /* PROOF */
+    #proof {
+      background: var(--ink);
+      padding: 72px 48px;
+      display: grid;
+      grid-template-columns: 1fr 2px 1fr 2px 1fr;
+      align-items: center
+    }
+
+    .pdiv {
+      background: rgba(255, 255, 255, .08);
+      height: 72px
+    }
+
+    .pcel {
+      padding: 0 56px;
+      text-align: center
+    }
+
+    .pcel h3 {
+      font-family: var(--D);
+      font-size: clamp(2.5rem, 4vw, 4.5rem);
+      color: var(--white);
+      letter-spacing: .04em;
+      margin-bottom: 6px
+    }
+
+    .pcel h3 sup {
+      font-size: .4em;
+      color: var(--cyan)
+    }
+
+    .pcel p {
+      font-family: var(--M);
+      font-size: 11px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .35)
+    }
+
+    /* B2B */
+    #b2b {
+      background: var(--paper);
+      padding: 80px 0;
+      border-top: 1px solid rgba(0, 0, 0, .06)
+    }
+
+    .b2bi {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 80px;
+      align-items: center
+    }
+
+    .b2bt h2 {
+      font-family: var(--D);
+      font-size: clamp(2rem, 3.5vw, 3.5rem);
+      text-transform: uppercase;
+      color: var(--ink);
+      line-height: .95;
+      margin-bottom: 20px
+    }
+
+    .b2bt h2 span {
+      color: var(--cyan)
+    }
+
+    .b2bt p {
+      font-size: .95rem;
+      color: var(--mid);
+      font-weight: 300;
+      line-height: 1.8
+    }
+
+    .b2bc {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: rgba(0, 0, 0, .07)
+    }
+
+    .b2bcard {
+      background: var(--paper);
+      padding: 26px 22px;
+      text-align: center;
+      transition: background .25s;
+      cursor: none
+    }
+
+    .b2bcard:hover {
+      background: var(--white)
+    }
+
+    .b2bsvg {
+      width: 36px;
+      height: 36px;
+      margin: 0 auto 12px;
+      display: block
+    }
+
+    .b2bsvg svg {
+      width: 100%;
+      height: 100%
+    }
+
+    .b2bcard h4 {
+      font-family: var(--D);
+      font-size: 1rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--ink);
+      margin-bottom: 5px
+    }
+
+    .b2bcard p {
+      font-size: .78rem;
+      color: var(--mid);
+      font-weight: 300;
+      line-height: 1.55
+    }
+
+    /* WHY */
+    #why {
+      background: var(--cream);
+      padding: 100px 0
+    }
+
+    .wi {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start
+    }
+
+    .bcs {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      background: rgba(0, 0, 0, .07);
+      margin-top: 40px
+    }
+
+    .bc {
+      background: var(--cream);
+      padding: 28px 32px;
+      display: flex;
+      gap: 22px;
+      align-items: flex-start;
+      transition: background .2s;
+      cursor: none
+    }
+
+    .bc:hover {
+      background: var(--white)
+    }
+
+    .bcn {
+      font-family: var(--D);
+      font-size: 2.8rem;
+      color: var(--ink);
+      opacity: .15;
+      line-height: 1;
+      min-width: 44px;
+      transition: opacity .3s, color .3s
+    }
+
+    .bc:hover .bcn {
+      color: var(--cyan);
+      opacity: 1
+    }
+
+    .bcb h4 {
+      font-family: var(--D);
+      font-size: 1.4rem;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      margin-bottom: 7px;
+      color: var(--ink)
+    }
+
+    .bcb p {
+      font-size: .85rem;
+      color: var(--mid);
+      font-weight: 300;
+      line-height: 1.7
+    }
+
+    .nda {
+      background: var(--ink);
+      padding: 44px;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 14px
+    }
+
+    .nda::after {
+      content: 'NDA';
+      position: absolute;
+      bottom: -20px;
+      right: -10px;
+      font-family: var(--D);
+      font-size: 9rem;
+      color: rgba(255, 255, 255, .03);
+      line-height: 1;
+      pointer-events: none
+    }
+
+    .qiw {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 22px;
+      position: relative
+    }
+
+    .qsvg {
+      width: 64px;
+      height: 64px;
+      animation: sf 3s ease-in-out infinite
+    }
+
+    @keyframes sf {
+
+      0%,
+      100% {
+        transform: translateY(0)
+      }
+
+      50% {
+        transform: translateY(-6px)
+      }
+    }
+
+    .scp {
+      stroke-dasharray: 34;
+      stroke-dashoffset: 34;
+      animation: dc 1.2s ease forwards .8s
+    }
+
+    @keyframes dc {
+      to {
+        stroke-dashoffset: 0
+      }
+    }
+
+    .sgl {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 84px;
+      height: 84px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 200, 180, .18), transparent 70%);
+      animation: gp 2.5s ease-in-out infinite
+    }
+
+    @keyframes gp {
+
+      0%,
+      100% {
+        opacity: .4;
+        transform: translate(-50%, -50%) scale(1)
+      }
+
+      50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.3)
+      }
+    }
+
+    .nda h3 {
+      font-family: var(--D);
+      font-size: 2.3rem;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 14px
+    }
+
+    .nda p {
+      font-size: .9rem;
+      color: rgba(255, 255, 255, .5);
+      font-weight: 300;
+      line-height: 1.8;
+      margin-bottom: 24px
+    }
+
+    .ncl {
+      display: flex;
+      flex-direction: column;
+      gap: 10px
+    }
+
+    .nc {
+      font-family: var(--M);
+      font-size: 11px;
+      letter-spacing: .1em;
+      color: rgba(255, 255, 255, .5);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: color .2s
+    }
+
+    .nc:hover {
+      color: rgba(255, 255, 255, .85)
+    }
+
+    .nc::before {
+      content: '';
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Ccircle cx='10' cy='10' r='9' fill='none' stroke='%2300c8b4' stroke-width='1.5'/%3E%3Cpath d='M6 10l3 3 5-5' fill='none' stroke='%2300c8b4' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat
+    }
+
+    .ht {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 28px;
+      background: var(--paper);
+      border: 1px solid rgba(0, 0, 0, .06)
+    }
+
+    .htg {
+      background: var(--cream);
+      font-family: var(--M);
+      font-size: 9px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--mid);
+      padding: 7px 13px;
+      border: 1px solid rgba(0, 0, 0, .08);
+      transition: all .2s;
+      cursor: none
+    }
+
+    .htg:hover {
+      background: var(--cyan);
+      color: var(--ink);
+      border-color: var(--cyan)
+    }
+
+    /* PROCESS */
+    #process {
+      padding: 100px 0;
+      background: var(--paper)
+    }
+
+    .prgd {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border: 1px solid rgba(0, 0, 0, .09);
+      margin-top: 56px
+    }
+
+    .prce {
+      padding: 44px 32px;
+      border-right: 1px solid rgba(0, 0, 0, .09);
+      position: relative;
+      overflow: hidden;
+      transition: background .25s;
+      cursor: none
+    }
+
+    .prce:last-child {
+      border-right: none
+    }
+
+    .prce:hover {
+      background: var(--ink)
+    }
+
+    .prce:hover .prct {
+      color: var(--white)
+    }
+
+    .prce:hover .prcd {
+      color: rgba(255, 255, 255, .45)
+    }
+
+    .prce:hover .prcl {
+      background: var(--cyan);
+      width: 56px
+    }
+
+    .prcn {
+      font-family: var(--D);
+      font-size: 4rem;
+      color: var(--ink);
+      opacity: .1;
+      line-height: 1;
+      margin-bottom: 22px;
+      transition: opacity .25s, color .25s
+    }
+
+    .prce:hover .prcn {
+      color: rgba(0, 200, 180, .12);
+      opacity: 1
+    }
+
+    .prci {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 18px;
+      opacity: .6;
+      transition: opacity .25s
+    }
+
+    .prce:hover .prci {
+      opacity: 1
+    }
+
+    .prci svg {
+      width: 100%;
+      height: 100%
+    }
+
+    .prcl {
+      width: 28px;
+      height: 2px;
+      background: var(--cyan);
+      margin-bottom: 18px;
+      transition: width .3s, background .25s
+    }
+
+    .prct {
+      font-family: var(--D);
+      font-size: 1.55rem;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      color: var(--ink);
+      transition: color .25s;
+      line-height: 1.05
+    }
+
+    .prcd {
+      font-size: .88rem;
+      color: var(--mid);
+      font-weight: 300;
+      line-height: 1.75;
+      transition: color .25s
+    }
+
+    /* TESTIMONIALS */
+    #testi {
+      padding: 100px 0;
+      background: var(--ink)
+    }
+
+    .teh {
+      text-align: center;
+      margin-bottom: 56px
+    }
+
+    .teh h2 {
+      color: var(--white)
+    }
+
+    .teh .sk {
+      justify-content: center
+    }
+
+    .teh p {
+      color: rgba(255, 255, 255, .45);
+      margin: 0 auto;
+      max-width: 480px
+    }
+
+    .teg {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: rgba(255, 255, 255, .06)
+    }
+
+    .tec {
+      background: rgba(255, 255, 255, .03);
+      padding: 40px 36px;
+      position: relative;
+      transition: background .2s
+    }
+
+    .tec:hover {
+      background: rgba(255, 255, 255, .06)
+    }
+
+    .tst {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 20px
+    }
+
+    .tst svg {
+      width: 13px;
+      height: 13px
+    }
+
+    .tq {
+      font-size: .92rem;
+      color: rgba(255, 255, 255, .6);
+      font-weight: 300;
+      line-height: 1.8;
+      margin-bottom: 28px;
+      font-style: italic;
+      position: relative;
+      padding-left: 16px
+    }
+
+    .tq::before {
+      content: '"';
+      font-family: var(--D);
+      font-size: 5rem;
+      color: var(--cyan);
+      opacity: .15;
+      position: absolute;
+      top: -16px;
+      left: -8px;
+      line-height: 1
+    }
+
+    .tau {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, .07)
+    }
+
+    .tavs {
+      width: 38px;
+      height: 38px;
+      flex-shrink: 0
+    }
+
+    .tavs svg {
+      width: 100%;
+      height: 100%
+    }
+
+    .tan {
+      font-family: var(--M);
+      font-size: 11px;
+      letter-spacing: .1em;
+      color: var(--white);
+      display: block
+    }
+
+    .tar {
+      font-size: .78rem;
+      color: rgba(255, 255, 255, .35);
+      display: block;
+      margin-top: 2px
+    }
+
+    /* FAQ */
+    #faq {
+      padding: 100px 0;
+      background: var(--cream)
+    }
+
+    .fqi {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 80px;
+      align-items: start
+    }
+
+    .fql {
+      display: flex;
+      flex-direction: column;
+      gap: 0
+    }
+
+    .fqit {
+      border-bottom: 1px solid rgba(0, 0, 0, .09)
+    }
+
+    .fqit:first-child {
+      border-top: 1px solid rgba(0, 0, 0, .09)
+    }
+
+    .fqq {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      cursor: none;
+      padding: 22px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--D);
+      font-size: 1.2rem;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--ink);
+      transition: color .2s;
+      gap: 16px
+    }
+
+    .fqq:hover {
+      color: var(--cyan)
+    }
+
+    .fqib {
+      width: 28px;
+      height: 28px;
+      border: 1.5px solid rgba(0, 0, 0, .15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all .3s
+    }
+
+    .fqib svg {
+      width: 12px;
+      height: 12px;
+      transition: transform .3s
+    }
+
+    .fqit.op .fqib {
+      background: var(--cyan);
+      border-color: var(--cyan)
+    }
+
+    .fqit.op .fqib svg {
+      transform: rotate(45deg)
+    }
+
+    .fqit.op .fqib svg path {
+      stroke: var(--ink)
+    }
+
+    .fqa {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .4s, padding .3s;
+      font-size: .9rem;
+      color: var(--mid);
+      font-weight: 300;
+      line-height: 1.75
+    }
+
+    .fqit.op .fqa {
+      max-height: 300px;
+      padding-bottom: 22px
+    }
+
+    /* CONTACT */
+    #contact {
+      background: var(--ink);
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden
+    }
+
+    #contact::before {
+      content: 'GET IN TOUCH';
+      white-space: nowrap;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: var(--D);
+      font-size: 12vw;
+      color: rgba(255, 255, 255, .018);
+      pointer-events: none
+    }
+
+    .coi {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 80px
+    }
+
+    .col h2 {
+      font-family: var(--D);
+      font-size: clamp(3rem, 5vw, 5rem);
+      text-transform: uppercase;
+      letter-spacing: .03em;
+      line-height: .9;
+      color: var(--white);
+      margin-bottom: 28px
+    }
+
+    .col h2 em {
+      font-style: normal;
+      color: var(--cyan)
+    }
+
+    .col>p {
+      font-size: .92rem;
+      color: rgba(255, 255, 255, .4);
+      font-weight: 300;
+      line-height: 1.8;
+      margin-bottom: 36px
+    }
+
+    .cdt {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, .05)
+    }
+
+    .cdl {
+      font-family: var(--M);
+      font-size: 10px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      min-width: 72px;
+      padding-top: 2px
+    }
+
+    .cdv {
+      font-size: .88rem;
+      color: rgba(255, 255, 255, .5);
+      font-weight: 300;
+      line-height: 1.6
+    }
+
+    .cdv a {
+      color: rgba(255, 255, 255, .5);
+      text-decoration: none;
+      transition: color .2s
+    }
+
+    .cdv a:hover {
+      color: var(--cyan)
+    }
+
+    .cf {
+      display: flex;
+      flex-direction: column;
+      gap: 0
+    }
+
+    .cfr {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      margin-bottom: 1px
+    }
+
+    .cfr.cff {
+      grid-template-columns: 1fr
+    }
+
+    .cff2 {
+      display: flex;
+      flex-direction: column;
+      background: rgba(255, 255, 255, .04);
+      padding: 18px 22px;
+      transition: background .2s
+    }
+
+    .cff2:focus-within {
+      background: rgba(255, 255, 255, .08)
+    }
+
+    .cff2 label {
+      font-family: var(--M);
+      font-size: 9px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .3);
+      margin-bottom: 7px
+    }
+
+    .cff2 input,
+    .cff2 select,
+    .cff2 textarea {
+      background: transparent;
+      border: none;
+      outline: none;
+      color: var(--white);
+      font-family: var(--B);
+      font-size: .9rem;
+      font-weight: 300;
+      width: 100%
+    }
+
+    .cff2 textarea {
+      min-height: 90px;
+      resize: none
+    }
+
+    .cff2 input::placeholder,
+    .cff2 textarea::placeholder {
+      color: rgba(255, 255, 255, .2)
+    }
+
+    .cff2 select {
+      color: var(--white)
+    }
+
+    .cff2 select option {
+      background: #1a1a1a
+    }
+
+    .cfs {
+      margin-top: 1px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255, 255, 255, .04);
+      padding: 22px;
+      gap: 16px;
+      flex-wrap: wrap
+    }
+
+    .cfn {
+      font-family: var(--M);
+      font-size: 10px;
+      color: rgba(255, 255, 255, .2);
+      display: flex;
+      align-items: center;
+      gap: 8px
+    }
+
+    .cfn svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0
+    }
+
+    .sbtn {
+      background: var(--cyan);
+      color: var(--ink);
+      border: none;
+      cursor: none;
+      font-family: var(--M);
+      font-size: 12px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      font-weight: 500;
+      padding: 13px 32px;
+      transition: background .2s
+    }
+
+    .sbtn:hover {
+      background: var(--cyan2)
+    }
+
+    #fmsg {
+      display: none;
+      padding: 14px 22px;
+      margin-top: 1px;
+      font-family: var(--M);
+      font-size: 11px;
+      letter-spacing: .1em
+    }
+
+    /* FOOTER */
+    footer {
+      background: #080808;
+      padding: 56px 48px 28px
+    }
+
+    .fti {
+      max-width: 1400px;
+      margin: 0 auto
+    }
+
+    .ftt {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 44px;
+      border-bottom: 1px solid rgba(255, 255, 255, .05)
+    }
+
+    .fbp {
+      font-size: .8rem;
+      color: rgba(255, 255, 255, .28);
+      font-weight: 300;
+      line-height: 1.7;
+      max-width: 260px;
+      margin-top: 12px
+    }
+
+    .fc5 h5 {
+      font-family: var(--M);
+      font-size: 10px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 18px
+    }
+
+    .fc5 ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px
+    }
+
+    .fc5 a {
+      font-size: .8rem;
+      color: rgba(255, 255, 255, .28);
+      text-decoration: none;
+      transition: color .2s
+    }
+
+    .fc5 a:hover {
+      color: var(--white)
+    }
+
+    .ftb {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 24px;
+      flex-wrap: wrap;
+      gap: 12px
+    }
+
+    .ftb p {
+      font-family: var(--M);
+      font-size: 10px;
+      color: rgba(255, 255, 255, .18)
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:1100px) {
+
+      .sh,
+      .wi,
+      .b2bi,
+      .coi,
+      .fqi {
+        grid-template-columns: 1fr
+      }
+
+      #proof {
+        grid-template-columns: 1fr;
+        gap: 36px;
+        padding: 56px 24px
+      }
+
+      .pdiv {
+        display: none
+      }
+
+      nav {
+        padding: 0 24px
+      }
+
+      .nl,
+      .nbtn {
+        display: none
+      }
+
+      .ham {
+        display: flex
+      }
+
+      .sw {
+        padding: 0 24px
+      }
+
+      .prgd {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .prce:nth-child(2) {
+        border-right: none
+      }
+
+      .ftt {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .teg,
+      .pg {
+        grid-template-columns: 1fr
+      }
+
+      .sg {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .hpart {
+        display: none
+      }
+
+      #services,
+      #portfolio,
+      #why,
+      #process,
+      #testi,
+      #faq,
+      #contact,
+      #b2b,
+      footer {
+        padding-left: 0;
+        padding-right: 0
+      }
+    }
+
+    @media(max-width:640px) {
+      h1 {
+        font-size: 2.4rem
+      }
+
+      .hc {
+        padding: 48px 20px
+      }
+
+      .svr {
+        grid-template-columns: 80px 1fr;
+        gap: 14px
+      }
+
+      .sva {
+        display: none
+      }
+
+      .prgd {
+        grid-template-columns: 1fr
+      }
+
+      .prce {
+        border-right: none;
+        border-bottom: 1px solid rgba(0, 0, 0, .09)
+      }
+
+      .cfr {
+        grid-template-columns: 1fr
+      }
+
+      .ftt {
+        grid-template-columns: 1fr
+      }
+
+      .b2bc {
+        grid-template-columns: 1fr
+      }
+
+      .hbadges {
+        gap: 6px
+      }
+
+      footer {
+        padding: 40px 24px 24px
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="cur"></div>
+  <div id="curR"></div>
+
+  <!-- MOBILE DRAWER -->
+  <div class="mob" id="mob">
+    <a href="#services" onclick="cn()">Services</a>
+    <a href="#portfolio" onclick="cn()">Our Work</a>
+    <a href="#why" onclick="cn()">Why Us</a>
+    <a href="#process" onclick="cn()">Process</a>
+    <a href="#testi" onclick="cn()">Reviews</a>
+    <a href="#faq" onclick="cn()">FAQ</a>
+    <a href="#contact" class="ctap" style="margin-top:8px;text-align:center" onclick="cn()">Get a Quote</a>
+  </div>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="#hero" class="logo">SOLIDUS<b>.</b>3D</a>
+    <ul class="nl">
+      <li>
+        <a href="#services">Services <span class="nav-arr">&#9660;</span></a>
+        <div class="dd">
+          <a href="#services">
+            <svg viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="3" stroke="#00c8b4" stroke-width="1.5" />
+              <path
+                d="M12 2v3M12 19v3M2 12h3M19 12h3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12"
+                stroke="#00c8b4" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+            Mechanical Modeling
+          </a>
+          <a href="#services">
+            <svg viewBox="0 0 24 24" fill="none">
+              <rect x="2" y="7" width="8" height="10" rx="1" stroke="#00c8b4" stroke-width="1.5" />
+              <path d="M14 5l6 7-6 7M14 12h6" stroke="#00c8b4" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+            2D to 3D Conversion
+          </a>
+          <a href="#services">
+            <svg viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="8" r="4" stroke="#00c8b4" stroke-width="1.5" />
+              <path d="M5 20c0-5 3-8 7-8s7 3 7 8" stroke="#00c8b4" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+            Sculpture &amp; Artistic Design
+          </a>
+          <div class="dd-div"></div>
+          <a href="#services">
+            <svg viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="4" r="2.5" stroke="#00c8b4" stroke-width="1.5" />
+              <path d="M9 8h6M12 8v5M9 13l-2 4M15 13l2 4M9 13h6" stroke="#00c8b4" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            BJD Doll Design
+          </a>
+          <a href="#services">
+            <svg viewBox="0 0 24 24" fill="none">
+              <rect x="4" y="14" width="16" height="6" rx="1" stroke="#00c8b4" stroke-width="1.5" />
+              <path d="M8 14V5h8v9" stroke="#00c8b4" stroke-width="1.5" stroke-linecap="round" />
+              <circle cx="17" cy="17" r="1.5" fill="#00c8b4" opacity=".7" />
+            </svg>
+            3D Print-Ready Models
+          </a>
+          <a href="#services">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M3 21h18M5 21V10l7-7 7 7v11" stroke="#00c8b4" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <rect x="9" y="14" width="6" height="7" stroke="#00c8b4" stroke-width="1.5" />
+            </svg>
+            Building &amp; Architecture
+          </a>
+        </div>
+      </li>
+      <li><a href="#portfolio">Our Work</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#testi">Reviews</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="#contact" class="nbtn">Get a Quote</a>
+    <button class="ham" id="hbtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hbg">
+      <img class="hpart hpl" src="https://solidus3dmodeling.com/solidus_hero.png" alt="3D CAD Part" loading="eager"
+        width="320" height="320">
+      <img class="hpart hpr" src="solidus_3d_modeling_hero_section.png" alt="3D CAD Part" loading="eager" width="320"
+        height="320">
+    </div>
+    <div class="hc">
+      <div class="hpill">B2B 3D Modeling Studio &nbsp;&middot;&nbsp; 15+ Countries</div>
+      <h1>One Studio.<br><span>Every 3D Discipline.</span></h1>
+      <p class="htag">From <b>engineering CAD</b> to <b>organic sculpture</b> &mdash; we deliver precision 3D models
+        that go straight from file to factory, studio, or print bed. Worldwide. On deadline.</p>
+      <div class="hact">
+        <a href="login.html" class="ctap">&#8599; Get an Instant Quote</a>
+        <a href="#services" class="ctag">Explore Services</a>
+      </div>
+      <div class="hbadges">
+        <span class="hb"><span class="bdot"></span>Mechanical CAD</span>
+        <span class="hb"><span class="bdot"></span>Sculpture Design</span>
+        <span class="hb"><span class="bdot"></span>BJD Doll Design</span>
+        <span class="hb"><span class="bdot"></span>2D to 3D</span>
+        <span class="hb"><span class="bdot"></span>Print-Ready Files</span>
+        <span class="hb"><span class="bdot"></span>Architecture Models</span>
+        <span class="hb"><span class="bdot"></span>NDA Protected</span>
+      </div>
+      <p class="hnote">Trusted by 900+ clients &nbsp;&middot;&nbsp; Unlimited revisions &nbsp;&middot;&nbsp; Files
+        delivered worldwide</p>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="mq" aria-hidden="true">
+    <div class="mqt">
+      <span class="mqi">Mechanical Modeling <span class="mqs">&middot;</span></span><span class="mqi">2D to 3D
+        Conversion <span class="mqs">&middot;</span></span><span class="mqi">Sculpture Design <span
+          class="mqs">&middot;</span></span><span class="mqi">BJD Doll Design <span
+          class="mqs">&middot;</span></span><span class="mqi">Print-Ready Files <span
+          class="mqs">&middot;</span></span><span class="mqi">Architecture Models <span
+          class="mqs">&middot;</span></span><span class="mqi">NDA Protected <span
+          class="mqs">&middot;</span></span><span class="mqi">Worldwide Delivery <span
+          class="mqs">&middot;</span></span>
+      <span class="mqi">Mechanical Modeling <span class="mqs">&middot;</span></span><span class="mqi">2D to 3D
+        Conversion <span class="mqs">&middot;</span></span><span class="mqi">Sculpture Design <span
+          class="mqs">&middot;</span></span><span class="mqi">BJD Doll Design <span
+          class="mqs">&middot;</span></span><span class="mqi">Print-Ready Files <span
+          class="mqs">&middot;</span></span><span class="mqi">Architecture Models <span
+          class="mqs">&middot;</span></span><span class="mqi">NDA Protected <span
+          class="mqs">&middot;</span></span><span class="mqi">Worldwide Delivery <span
+          class="mqs">&middot;</span></span>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <section id="sb">
+    <div class="sg">
+      <div class="sc2 rv"><span class="sn" data-target="2000" data-suffix="+">2,000+</span><span class="sl">Parts
+          Designed</span><span class="ss">Across 30+ industries</span></div>
+      <div class="sc2 rv" style="transition-delay:.1s"><span class="sn" data-target="150"
+          data-suffix="+">150+</span><span class="sl">Projects Delivered</span><span class="ss">End-to-end, zero
+          compromises</span></div>
+      <div class="sc2 rv" style="transition-delay:.2s"><span class="sn" data-target="15" data-suffix="+">15+</span><span
+          class="sl">Countries Served</span><span class="ss">Trusted B2B clients worldwide</span></div>
+      <div class="sc2 rv" style="transition-delay:.3s"><span class="sn" data-target="900"
+          data-suffix="+">900+</span><span class="sl">Happy Clients</span><span class="ss">From startups to
+          manufacturers</span></div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="sw">
+      <div class="sh rv">
+        <div>
+          <div class="sk">What We Do</div>
+          <h2>Every 3D Discipline.<br>One Studio.</h2>
+        </div>
+        <p class="sdesc">Six specialized services &mdash; clean geometry, correct tolerances, files that work first
+          time.</p>
+      </div>
+      <div class="svl">
+
+        <!-- 01 Mechanical -->
+        <div class="svr rv">
+          <div class="svic">
+            <div class="svn">01</div>
+            <div class="svi"><svg viewBox="0 0 52 52" fill="none">
+                <circle cx="26" cy="26" r="8" stroke="#00c8b4" stroke-width="2" />
+                <circle cx="26" cy="26" r="3" fill="rgba(0,200,180,.15)" stroke="#00c8b4" stroke-width="1.5" />
+                <path
+                  d="M26 10v6M26 36v6M10 26h6M36 26h6M14.1 14.1l4.2 4.2M33.7 33.7l4.2 4.2M14.1 37.9l4.2-4.2M33.7 18.3l4.2-4.2"
+                  stroke="#00c8b4" stroke-width="2.5" stroke-linecap="round" />
+                <ellipse cx="26" cy="26" rx="14" ry="14" stroke="rgba(0,200,180,.2)" stroke-width="1"
+                  stroke-dasharray="3 4" />
+              </svg></div>
+          </div>
+          <div class="svb">
+            <h3>Mechanical Modeling</h3>
+            <p>Precision CAD for engineering parts, assemblies, and prototypes. Built with exact tolerances, threaded
+              features, and geometry that goes straight to manufacturing without rework.</p>
+            <div class="svts"><span class="svt">Fusion 360</span><span class="svt">SolidWorks</span><span
+                class="svt">.STEP</span><span class="svt">.IGES</span><span class="svt">CAD</span></div>
+          </div>
+          <span class="sva">&#8599;</span>
+        </div>
+
+        <!-- 02 2D to 3D -->
+        <div class="svr rv" style="transition-delay:.07s">
+          <div class="svic">
+            <div class="svn">02</div>
+            <div class="svi"><svg viewBox="0 0 52 52" fill="none">
+                <rect x="4" y="13" width="17" height="23" rx="2" stroke="#00c8b4" stroke-width="1.5"
+                  fill="rgba(0,200,180,.05)" />
+                <line x1="7" y1="20" x2="18" y2="20" stroke="#00c8b4" stroke-width="1" stroke-dasharray="2 2" />
+                <line x1="7" y1="26" x2="18" y2="26" stroke="#00c8b4" stroke-width="1" stroke-dasharray="2 2" />
+                <line x1="7" y1="32" x2="18" y2="32" stroke="#00c8b4" stroke-width="1" stroke-dasharray="2 2" />
+                <path d="M23 26h6" stroke="#00c8b4" stroke-width="2" stroke-linecap="round" />
+                <path d="M27 23l4 3-4 3" stroke="#00c8b4" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M33 17l11 6v10l-11 6-11-6V23z" stroke="#00c8b4" stroke-width="1.5" fill="rgba(0,200,180,.07)"
+                  stroke-linejoin="round" />
+                <path d="M22 23l11 6M33 29v10" stroke="#00c8b4" stroke-width="1" stroke-linecap="round" />
+              </svg></div>
+          </div>
+          <div class="svb">
+            <h3>2D to 3D Conversion</h3>
+            <p>Send us your sketch, blueprint, or reference photo &mdash; we reconstruct it as a full 3D model with
+              accurate proportions. Anything flat becomes spatial.</p>
+            <div class="svts"><span class="svt">Sketches</span><span class="svt">Blueprints</span><span
+                class="svt">Photos</span><span class="svt">.DWG</span></div>
+          </div>
+          <span class="sva">&#8599;</span>
+        </div>
+
+        <!-- 03 Sculpture -->
+        <div class="svr rv" style="transition-delay:.14s">
+          <div class="svic">
+            <div class="svn">03</div>
+            <div class="svi"><svg viewBox="0 0 52 52" fill="none">
+                <circle cx="26" cy="16" r="9" stroke="#00c8b4" stroke-width="1.5" fill="rgba(0,200,180,.06)" />
+                <path d="M20 24.5v3M32 24.5v3" stroke="#00c8b4" stroke-width="1.5" stroke-linecap="round" />
+                <path d="M12 46c0-7 4-12 14-12s14 5 14 12" stroke="#00c8b4" stroke-width="1.5" stroke-linecap="round"
+                  fill="rgba(0,200,180,.04)" />
+                <path d="M20 13.5c1-2 3-3 6-3M22 18c.8.9 2.2 1.3 3.8.8" stroke="rgba(0,200,180,.55)" stroke-width="1"
+                  stroke-linecap="round" />
+                <ellipse cx="26" cy="46" rx="11" ry="2.5" stroke="#00c8b4" stroke-width="1" opacity=".3" />
+              </svg></div>
+          </div>
+          <div class="svb">
+            <h3>Sculpture &amp; Artistic Design</h3>
+            <p>High-detail organic sculpting for figurines, busts, character models, and decorative pieces. We capture
+              texture, expression, and artistic intent with digital sculpting precision.</p>
+            <div class="svts"><span class="svt">ZBrush</span><span class="svt">Organic</span><span
+                class="svt">High-poly</span><span class="svt">Figurines</span></div>
+          </div>
+          <span class="sva">&#8599;</span>
+        </div>
+
+        <!-- 04 BJD -->
+        <div class="svr rv" style="transition-delay:.21s">
+          <div class="svic">
+            <div class="svn">04</div>
+            <div class="svi"><svg viewBox="0 0 52 52" fill="none">
+                <circle cx="26" cy="8" r="5.5" stroke="#00c8b4" stroke-width="1.5" fill="rgba(0,200,180,.07)" />
+                <circle cx="26" cy="16" r="2" fill="#00c8b4" opacity=".4" />
+                <rect x="20" y="18" width="12" height="10" rx="2" stroke="#00c8b4" stroke-width="1.5"
+                  fill="rgba(0,200,180,.05)" />
+                <circle cx="18" cy="20" r="2.5" stroke="#00c8b4" stroke-width="1.2" fill="rgba(0,200,180,.1)" />
+                <circle cx="34" cy="20" r="2.5" stroke="#00c8b4" stroke-width="1.2" fill="rgba(0,200,180,.1)" />
+                <line x1="15.5" y1="22" x2="11" y2="31" stroke="#00c8b4" stroke-width="1.5" stroke-linecap="round" />
+                <line x1="36.5" y1="22" x2="41" y2="31" stroke="#00c8b4" stroke-width="1.5" stroke-linecap="round" />
+                <circle cx="22" cy="30" r="2.5" stroke="#00c8b4" stroke-width="1.2" fill="rgba(0,200,180,.1)" />
+                <circle cx="30" cy="30" r="2.5" stroke="#00c8b4" stroke-width="1.2" fill="rgba(0,200,180,.1)" />
+                <line x1="22" y1="32.5" x2="20" y2="44" stroke="#00c8b4" stroke-width="1.5" stroke-linecap="round" />
+                <line x1="30" y1="32.5" x2="32" y2="44" stroke="#00c8b4" stroke-width="1.5" stroke-linecap="round" />
+                <circle cx="20.5" cy="38" r="2" stroke="#00c8b4" stroke-width="1" fill="rgba(0,200,180,.1)" />
+                <circle cx="31.5" cy="38" r="2" stroke="#00c8b4" stroke-width="1" fill="rgba(0,200,180,.1)" />
+              </svg></div>
+          </div>
+          <div class="svb">
+            <h3>BJD Doll Design</h3>
+            <p>Ball-jointed doll design is one of our flagship specialties. We engineer joint cups, tension channels,
+              and full posing range &mdash; with detailed face sculpts built for resin printing.</p>
+            <div class="svts"><span class="svt">Ball Joints</span><span class="svt">Articulation</span><span
+                class="svt">Resin SLA</span><span class="svt">ZBrush</span></div>
+          </div>
+          <span class="sva">&#8599;</span>
+        </div>
+
+        <!-- 05 Print-Ready -->
+        <div class="svr rv" style="transition-delay:.28s">
+          <div class="svic">
+            <div class="svn">05</div>
+            <div class="svi"><svg viewBox="0 0 52 52" fill="none">
+                <rect x="6" y="20" width="40" height="18" rx="3" stroke="#00c8b4" stroke-width="1.5"
+                  fill="rgba(0,200,180,.05)" />
+                <rect x="14" y="11" width="24" height="10" rx="1" stroke="#00c8b4" stroke-width="1.5" />
+                <rect x="14" y="36" width="24" height="6" rx="1" stroke="#00c8b4" stroke-width="1.2"
+                  fill="rgba(0,200,180,.08)" />
+                <path d="M20 39l3-5 3 3 3-5 3 7" stroke="#00c8b4" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <rect x="22" y="24" width="8" height="4" rx="1" fill="rgba(0,200,180,.2)" stroke="#00c8b4"
+                  stroke-width="1" />
+                <circle cx="40" cy="27" r="2.5" fill="#00c8b4" opacity=".7">
+                  <animate attributeName="opacity" values="0.7;0.2;0.7" dur="1.8s" repeatCount="indefinite" />
+                </circle>
+              </svg></div>
+          </div>
+          <div class="svb">
+            <h3>3D Print-Ready Models</h3>
+            <p>Every model passes a full printability audit &mdash; wall thickness, overhang angles, manifold geometry,
+              and clearance fits. We also repair existing models for FDM, SLA, or SLS printing.</p>
+            <div class="svts"><span class="svt">FDM</span><span class="svt">SLA</span><span class="svt">SLS</span><span
+                class="svt">.STL</span><span class="svt">.3MF</span></div>
+          </div>
+          <span class="sva">&#8599;</span>
+        </div>
+
+        <!-- 06 Architecture -->
+        <div class="svr rv" style="transition-delay:.35s">
+          <div class="svic">
+            <div class="svn">06</div>
+            <div class="svi"><svg viewBox="0 0 52 52" fill="none">
+                <path d="M26 42l18-9V24L26 15 8 24v9z" stroke="#00c8b4" stroke-width="1" fill="rgba(0,200,180,.04)"
+                  stroke-linejoin="round" />
+                <path d="M8 24v9l18 9V33z" fill="rgba(0,200,180,.08)" stroke="#00c8b4" stroke-width="1.5"
+                  stroke-linejoin="round" />
+                <path d="M44 24v9l-18 9V33z" fill="rgba(0,200,180,.04)" stroke="#00c8b4" stroke-width="1.5"
+                  stroke-linejoin="round" />
+                <path d="M26 15l18 9-18 9-18-9z" fill="rgba(0,200,180,.12)" stroke="#00c8b4" stroke-width="1.5"
+                  stroke-linejoin="round" />
+                <rect x="11" y="27" width="6" height="5" rx=".5" fill="rgba(0,200,180,.3)" stroke="#00c8b4"
+                  stroke-width=".8" />
+                <rect x="20" y="27" width="5" height="5" rx=".5" fill="rgba(0,200,180,.15)" stroke="#00c8b4"
+                  stroke-width=".8" />
+                <path d="M25 33v9h4V33" stroke="#00c8b4" stroke-width="1" stroke-linecap="round" />
+              </svg></div>
+          </div>
+          <div class="svb">
+            <h3>Building &amp; Architecture</h3>
+            <p>Architectural scale models for client presentations and planning submissions. Residential homes to
+              complex commercial facades &mdash; modeled with accurate proportions and structural clarity.</p>
+            <div class="svts"><span class="svt">Residential</span><span class="svt">Commercial</span><span
+                class="svt">Scale Models</span><span class="svt">Revit</span></div>
+          </div>
+          <span class="sva">&#8599;</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio">
+    <div class="sw">
+      <div class="ph rv">
+        <div class="sk" style="justify-content:center">Our Work</div>
+        <h2 style="text-align:center">The Proof Is In<br>The Geometry.</h2>
+        <p class="sdesc" style="text-align:center;margin:12px auto 0">Real projects. Real clients. Every file delivered,
+          printed, and used in the real world.</p>
+      </div>
+      <div class="pf">
+        <button class="pfb ac" onclick="fp(this,'all')">All</button>
+        <button class="pfb" onclick="fp(this,'mech')">Mechanical</button>
+        <button class="pfb" onclick="fp(this,'sculp')">Sculpture</button>
+        <button class="pfb" onclick="fp(this,'bjd')">BJD Doll</button>
+        <button class="pfb" onclick="fp(this,'arch')">Architecture</button>
+        <button class="pfb" onclick="fp(this,'conv')">2D&#8594;3D</button>
+      </div>
+      <div class="pg" id="pg">
+
+        <div class="pc rv" data-cat="mech">
+          <div class="pci">
+            <div class="pci-svg"><svg viewBox="0 0 44 44" fill="none">
+                <circle cx="22" cy="22" r="7" stroke="#00c8b4" stroke-width="1.5" />
+                <circle cx="22" cy="22" r="3" fill="rgba(0,200,180,.2)" stroke="#00c8b4" stroke-width="1" />
+                <path
+                  d="M22 8v5M22 31v5M8 22h5M31 22h5M12.1 12.1l3.5 3.5M28.4 28.4l3.5 3.5M12.1 31.9l3.5-3.5M28.4 15.6l3.5-3.5"
+                  stroke="#00c8b4" stroke-width="2" stroke-linecap="round" />
+              </svg></div>
+            <span class="pm">Mechanical &middot; SolidWorks</span>
+            <h4>Industrial Valve Assembly</h4>
+            <p>Full CAD assembly with M8 threaded fittings and tolerance-matched components ready for CNC manufacture.
+            </p>
+            <a href="#contact" class="pl">View Project &#8594;</a>
+          </div>
+        </div>
+
+        <div class="pc rv" data-cat="bjd" style="transition-delay:.08s">
+          <div class="pci">
+            <div class="pci-svg"><svg viewBox="0 0 44 44" fill="none">
+                <circle cx="22" cy="7" r="4.5" stroke="#00c8b4" stroke-width="1.5" fill="rgba(0,200,180,.07)" />
+                <circle cx="22" cy="13.5" r="1.8" fill="#00c8b4" opacity=".4" />
+                <rect x="17" y="15" width="10" height="8" rx="2" stroke="#00c8b4" stroke-width="1.2"
+                  fill="rgba(0,200,180,.05)" />
+                <circle cx="15" cy="17" r="2" stroke="#00c8b4" stroke-width="1.1" fill="rgba(0,200,180,.1)" />
+                <circle cx="29" cy="17" r="2" stroke="#00c8b4" stroke-width="1.1" fill="rgba(0,200,180,.1)" />
+                <line x1="13" y1="19" x2="10" y2="26" stroke="#00c8b4" stroke-width="1.3" stroke-linecap="round" />
+                <line x1="31" y1="19" x2="34" y2="26" stroke="#00c8b4" stroke-width="1.3" stroke-linecap="round" />
+                <circle cx="19" cy="25" r="2" stroke="#00c8b4" stroke-width="1.1" fill="rgba(0,200,180,.1)" />
+                <circle cx="25" cy="25" r="2" stroke="#00c8b4" stroke-width="1.1" fill="rgba(0,200,180,.1)" />
+                <line x1="19" y1="27" x2="18" y2="37" stroke="#00c8b4" stroke-width="1.3" stroke-linecap="round" />
+                <line x1="25" y1="27" x2="26" y2="37" stroke="#00c8b4" stroke-width="1.3" stroke-linecap="round" />
+              </svg></div>
+            <span class="pm">BJD Doll &middot; ZBrush &middot; Resin</span>
+            <h4>1/4 Scale BJD "Seraph"</h4>
+            <p>Full-body articulated doll with 18 joint points, detailed face sculpt, and pre-supported SLA-ready parts.
+            </p>
+            <a href="#contact" class="pl">View Project &#8594;</a>
+          </div>
+        </div>
+
+        <div class="pc rv" data-cat="arch" style="transition-delay:.16s">
+          <div class="pci">
+            <div class="pci-svg"><svg viewBox="0 0 44 44" fill="none">
+                <path d="M22 36l15-7.5V20L22 13 7 20v8.5z" stroke="#00c8b4" stroke-width="1.2"
+                  fill="rgba(0,200,180,.04)" stroke-linejoin="round" />
+                <path d="M7 20v8.5l15 7.5V28z" fill="rgba(0,200,180,.08)" stroke="#00c8b4" stroke-width="1.4"
+                  stroke-linejoin="round" />
+                <path d="M37 20v8.5l-15 7.5V28z" fill="rgba(0,200,180,.04)" stroke="#00c8b4" stroke-width="1.4"
+                  stroke-linejoin="round" />
+                <path d="M22 13l15 7.5-15 7.5-15-7.5z" fill="rgba(0,200,180,.12)" stroke="#00c8b4" stroke-width="1.4"
+                  stroke-linejoin="round" />
+                <rect x="9" y="23" width="4" height="4" rx=".4" fill="rgba(0,200,180,.3)" stroke="#00c8b4"
+                  stroke-width=".7" />
+              </svg></div>
+            <span class="pm">Architecture &middot; 1:100 Scale</span>
+            <h4>Residential Villa Model</h4>
+            <p>Detailed exterior architecture model for client presentation with removable roof and interior detailing.
+            </p>
+            <a href="#contact" class="pl">View Project &#8594;</a>
+          </div>
+        </div>
+
+        <div class="pc rv" data-cat="sculp" style="transition-delay:.24s">
+          <div class="pci">
+            <div class="pci-svg"><svg viewBox="0 0 44 44" fill="none">
+                <circle cx="22" cy="13" r="7.5" stroke="#00c8b4" stroke-width="1.5" fill="rgba(0,200,180,.06)" />
+                <path d="M16 20v3M28 20v3" stroke="#00c8b4" stroke-width="1.5" stroke-linecap="round" />
+                <path d="M9 38c0-6 4-10 13-10s13 4 13 10" stroke="#00c8b4" stroke-width="1.5" stroke-linecap="round" />
+                <path d="M17 11c.8-1.5 2.5-2.5 5-2.5M19 15c.7.8 2 1.2 3.5.8" stroke="rgba(0,200,180,.6)"
+                  stroke-width=".9" stroke-linecap="round" />
+              </svg></div>
+            <span class="pm">Sculpture &middot; ZBrush &middot; Resin</span>
+            <h4>Fantasy Dragon Bust</h4>
+            <p>High-poly sculpt with scale and skin texture detail, decimated and optimized for desktop resin printing.
+            </p>
+            <a href="#contact" class="pl">View Project &#8594;</a>
+          </div>
+        </div>
+
+        <div class="pc rv" data-cat="conv" style="transition-delay:.32s">
+          <div class="pci">
+            <div class="pci-svg"><svg viewBox="0 0 44 44" fill="none">
+                <rect x="3" y="11" width="15" height="20" rx="1.5" stroke="#00c8b4" stroke-width="1.4"
+                  fill="rgba(0,200,180,.05)" />
+                <line x1="6" y1="17" x2="15" y2="17" stroke="#00c8b4" stroke-width=".9" stroke-dasharray="1.5 2" />
+                <line x1="6" y1="22" x2="15" y2="22" stroke="#00c8b4" stroke-width=".9" stroke-dasharray="1.5 2" />
+                <path d="M20 21h4" stroke="#00c8b4" stroke-width="2" stroke-linecap="round" />
+                <path d="M22 18.5l3.5 2.5-3.5 2.5" stroke="#00c8b4" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M30 14l11 6v9l-11 5-11-5v-9z" stroke="#00c8b4" stroke-width="1.3" fill="rgba(0,200,180,.07)"
+                  stroke-linejoin="round" />
+                <path d="M19 20l11 6M30 26v9" stroke="#00c8b4" stroke-width=".9" stroke-linecap="round" />
+              </svg></div>
+            <span class="pm">2D&#8594;3D &middot; Fusion 360 &middot; FDM</span>
+            <h4>Custom Motorcycle Part</h4>
+            <p>Reconstructed from a hand sketch and 3 reference photos. Test-fitted on a Royal Enfield.</p>
+            <a href="#contact" class="pl">View Project &#8594;</a>
+          </div>
+        </div>
+
+        <div class="pc rv" data-cat="mech" style="transition-delay:.40s">
+          <div class="pci">
+            <div class="pci-svg"><svg viewBox="0 0 44 44" fill="none">
+                <path d="M22 4l10 5.5v11L22 26 12 20.5v-11z" stroke="#00c8b4" stroke-width="1.4"
+                  fill="rgba(0,200,180,.07)" stroke-linejoin="round" />
+                <path d="M12 9.5l10 5.5M22 15v11M32 9.5l-10 5.5" stroke="#00c8b4" stroke-width=".9"
+                  stroke-linecap="round" />
+                <path d="M22 28l10 5.5v7L22 46l-10-5.5v-7z" stroke="#00c8b4" stroke-width="1.4"
+                  fill="rgba(0,200,180,.04)" stroke-linejoin="round" />
+              </svg></div>
+            <span class="pm">Print-Ready &middot; SLA &middot; STL</span>
+            <h4>Miniature Chess Set</h4>
+            <p>Complete 32-piece chess set with 0.4mm detail features and pre-supported STL files for SLA printing.</p>
+            <a href="#contact" class="pl">View Project &#8594;</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROOF -->
+  <section id="proof">
+    <div class="pcel rv">
+      <h3 data-target="2000" data-suffix="+">2,000+</h3>
+      <p>Parts Designed</p>
+    </div>
+    <div class="pdiv"></div>
+    <div class="pcel rv" style="transition-delay:.15s">
+      <h3 data-target="150" data-suffix="+">150+</h3>
+      <p>B2B Projects Delivered</p>
+    </div>
+    <div class="pdiv"></div>
+    <div class="pcel rv" style="transition-delay:.3s">
+      <h3 data-target="900" data-suffix="+">900+</h3>
+      <p>Clients &middot; 15+ Countries</p>
+    </div>
+  </section>
+
+  <!-- B2B -->
+  <section id="b2b">
+    <div class="sw">
+      <div class="b2bi">
+        <div class="b2bt rl">
+          <div class="sk">B2B Worldwide</div>
+          <h2>Built for<br><span>Global Business.</span><br>Delivered<br>Anywhere.</h2>
+          <p style="margin-top:20px">We serve manufacturers, product companies, engineering consultancies and design
+            agencies across 15+ countries. Our workflow is built for B2B &mdash; NDAs, IP protection, file formats that
+            integrate directly into your supply chain.</p>
+        </div>
+        <div class="b2bc rr">
+          <div class="b2bcard">
+            <div class="b2bsvg"><svg viewBox="0 0 36 36" fill="none">
+                <rect x="4" y="18" width="28" height="14" rx="2" stroke="#00c8b4" stroke-width="1.5"
+                  fill="rgba(0,200,180,.06)" />
+                <path d="M10 18V10a8 8 0 0116 0v8" stroke="#00c8b4" stroke-width="1.5" stroke-linecap="round" />
+                <rect x="14" y="22" width="8" height="6" rx="1" stroke="#00c8b4" stroke-width="1" />
+              </svg></div>
+            <h4>Manufacturing</h4>
+            <p>DFM-reviewed files for factories worldwide</p>
+          </div>
+          <div class="b2bcard">
+            <div class="b2bsvg"><svg viewBox="0 0 36 36" fill="none">
+                <circle cx="18" cy="18" r="12" stroke="#00c8b4" stroke-width="1.5" fill="rgba(0,200,180,.05)" />
+                <path d="M18 6v4M18 26v4M6 18h4M26 18h4" stroke="#00c8b4" stroke-width="1.5" stroke-linecap="round" />
+                <circle cx="18" cy="18" r="4" stroke="#00c8b4" stroke-width="1.2" fill="rgba(0,200,180,.15)" />
+              </svg></div>
+            <h4>Medical Devices</h4>
+            <p>Precision CAD with tight tolerance control</p>
+          </div>
+          <div class="b2bcard">
+            <div class="b2bsvg"><svg viewBox="0 0 36 36" fill="none">
+                <rect x="5" y="8" width="26" height="18" rx="2" stroke="#00c8b4" stroke-width="1.5"
+                  fill="rgba(0,200,180,.05)" />
+                <path d="M12 26v2M24 26v2M8 28h20" stroke="#00c8b4" stroke-width="1.5" stroke-linecap="round" />
+                <rect x="9" y="12" width="6" height="5" rx="1" stroke="#00c8b4" stroke-width="1"
+                  fill="rgba(0,200,180,.15)" />
+              </svg></div>
+            <h4>Consumer Products</h4>
+            <p>Sketch to retail-ready files and renders</p>
+          </div>
+          <div class="b2bcard">
+            <div class="b2bsvg"><svg viewBox="0 0 36 36" fill="none">
+                <path d="M4 26c0-8 4-14 14-14s14 6 14 14" stroke="#00c8b4" stroke-width="1.5" stroke-linecap="round" />
+                <path d="M4 26h28" stroke="#00c8b4" stroke-width="1.5" stroke-linecap="round" />
+                <circle cx="18" cy="12" r="4" stroke="#00c8b4" stroke-width="1.2" fill="rgba(0,200,180,.1)" />
+              </svg></div>
+            <h4>Automotive &amp; Aero</h4>
+            <p>Complex assemblies with GD&amp;T review</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section id="why">
+    <div class="sw">
+      <div class="wi">
+        <div>
+          <div class="sk">Why Solidus 3D</div>
+          <h2>We Solve The<br>Whole Problem,<br>Not Just<br>The Model.</h2>
+          <div class="bcs">
+            <div class="bc rv">
+              <div class="bcn">01</div>
+              <div class="bcb">
+                <h4>NDA from Day One</h4>
+                <p>A Non-Disclosure Agreement is signed before any work begins. Your IP stays fully confidential &mdash;
+                  always.</p>
+              </div>
+            </div>
+            <div class="bc rv" style="transition-delay:.08s">
+              <div class="bcn">02</div>
+              <div class="bcb">
+                <h4>Unlimited Revisions</h4>
+                <p>We iterate until the design is exactly right. No revision caps, no extra charges &mdash; you sign off
+                  when 100% satisfied.</p>
+              </div>
+            </div>
+            <div class="bc rv" style="transition-delay:.16s">
+              <div class="bcn">03</div>
+              <div class="bcb">
+                <h4>Minimum Lead Time</h4>
+                <p>Most projects quoted within 24 hours. Expedited delivery for urgent deadlines worldwide.</p>
+              </div>
+            </div>
+            <div class="bc rv" style="transition-delay:.24s">
+              <div class="bcn">04</div>
+              <div class="bcb">
+                <h4>Beginners Welcome</h4>
+                <p>No CAD background required. Send a concept sketch or just a description &mdash; we handle everything.
+                </p>
+              </div>
+            </div>
+            <div class="bc rv" style="transition-delay:.32s">
+              <div class="bcn">05</div>
+              <div class="bcb">
+                <h4>Exhibition &amp; Scale Models</h4>
+                <p>Resized display models for Expos, trade fairs and product showcases &mdash; optimized for any event.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="nda">
+            <div class="qiw">
+              <div class="sgl"></div>
+              <svg class="qsvg" viewBox="0 0 64 64" fill="none">
+                <path d="M32 4L8 14V32C8 45.3 18.7 57.6 32 60C45.3 57.6 56 45.3 56 32V14L32 4Z"
+                  fill="rgba(0,200,180,.08)" stroke="#00c8b4" stroke-width="1.5" stroke-linejoin="round">
+                  <animate attributeName="stroke-opacity" values="0.6;1;0.6" dur="2.5s" repeatCount="indefinite" />
+                </path>
+                <path d="M32 10L14 18V32C14 42 22 51.5 32 54C42 51.5 50 42 50 32V18L32 10Z" fill="none"
+                  stroke="rgba(0,200,180,.2)" stroke-width="1" />
+                <path class="scp" d="M21 32l8 8 14-14" stroke="#00c8b4" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round" fill="none" />
+                <circle cx="32" cy="32" r="26" fill="none" stroke="rgba(0,200,180,.12)" stroke-width="1"
+                  stroke-dasharray="4 8">
+                  <animateTransform attributeName="transform" type="rotate" values="0 32 32;360 32 32" dur="12s"
+                    repeatCount="indefinite" />
+                </circle>
+              </svg>
+            </div>
+            <h3>Your IP Is Protected.</h3>
+            <p>Every B2B engagement starts with a signed NDA. Your designs, files and intellectual property remain
+              completely confidential throughout the project and beyond delivery.</p>
+            <div class="ncl">
+              <div class="nc">NDA signed before work begins</div>
+              <div class="nc">Files stored securely, never shared</div>
+              <div class="nc">Full IP ownership on delivery</div>
+              <div class="nc">Zero third-party access</div>
+            </div>
+          </div>
+          <div class="ht"><span class="htg">Concept sketch</span><span class="htg">No CAD experience</span><span
+              class="htg">DFM review</span><span class="htg">Exhibition model</span><span class="htg">Broken CAD
+              file</span><span class="htg">Product visualization</span><span class="htg">Scale prototype</span><span
+              class="htg">Collectible design</span><span class="htg">Investor renders</span><span class="htg">B2B OEM
+              parts</span><span class="htg">Worldwide delivery</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <div class="sw">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end" class="rv">
+        <div>
+          <div class="sk">How It Works</div>
+          <h2>Simple Process.<br>Zero Surprises.</h2>
+        </div>
+        <p class="sdesc" style="align-self:end">Most projects kick off within 24 hours &mdash; no complicated
+          onboarding, no hidden steps.</p>
+      </div>
+      <div class="prgd">
+        <div class="prce rv">
+          <div class="prcn">01</div>
+          <div class="prci"><svg viewBox="0 0 40 40" fill="none">
+              <rect x="6" y="4" width="24" height="32" rx="2" stroke="#00c8b4" stroke-width="1.5" />
+              <path d="M12 12h12M12 18h8M12 24h10" stroke="#00c8b4" stroke-width="1.5" stroke-linecap="round" />
+            </svg></div>
+          <div class="prcl"></div>
+          <div class="prct">Share Your Brief</div>
+          <p class="prcd">Send reference images, sketches, drawings, or a description. We ask the right questions and
+            fill the gaps.</p>
+        </div>
+        <div class="prce rv" style="transition-delay:.1s">
+          <div class="prcn">02</div>
+          <div class="prci"><svg viewBox="0 0 40 40" fill="none">
+              <rect x="4" y="8" width="32" height="22" rx="2" stroke="#00c8b4" stroke-width="1.5" />
+              <path d="M14 30v4M26 30v4M10 34h20" stroke="#00c8b4" stroke-width="1.5" stroke-linecap="round" />
+              <path d="M12 16l8 6-8 6V16z" fill="rgba(0,200,180,.2)" stroke="#00c8b4" stroke-width="1"
+                stroke-linejoin="round" />
+            </svg></div>
+          <div class="prcl"></div>
+          <div class="prct">Concept Preview</div>
+          <p class="prcd">We send a rough 3D preview or wireframe for approval before full production. You see what
+            you're getting &mdash; upfront.</p>
+        </div>
+        <div class="prce rv" style="transition-delay:.2s">
+          <div class="prcn">03</div>
+          <div class="prci"><svg viewBox="0 0 40 40" fill="none">
+              <path d="M8 20a12 12 0 0120.5-8.5" stroke="#00c8b4" stroke-width="1.5" stroke-linecap="round" />
+              <path d="M32 20a12 12 0 01-20.5 8.5" stroke="#00c8b4" stroke-width="1.5" stroke-linecap="round" />
+              <path d="M26 8l4 3.5-4 3" stroke="#00c8b4" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M14 32l-4-3.5 4-3" stroke="#00c8b4" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <circle cx="20" cy="20" r="3" fill="rgba(0,200,180,.2)" stroke="#00c8b4" stroke-width="1" />
+            </svg></div>
+          <div class="prcl"></div>
+          <div class="prct">Refine Together</div>
+          <p class="prcd">Three rounds of revisions included. Geometry, proportions, and details adjusted until you're
+            completely satisfied.</p>
+        </div>
+        <div class="prce rv" style="transition-delay:.3s">
+          <div class="prcn">04</div>
+          <div class="prci"><svg viewBox="0 0 40 40" fill="none">
+              <rect x="4" y="28" width="32" height="8" rx="2" stroke="#00c8b4" stroke-width="1.5"
+                fill="rgba(0,200,180,.06)" />
+              <path d="M20 6v18M13 18l7 6 7-6" stroke="#00c8b4" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <circle cx="30" cy="32" r="2" fill="#00c8b4" opacity=".6">
+                <animate attributeName="opacity" values="0.6;1;0.6" dur="1.5s" repeatCount="indefinite" />
+              </circle>
+            </svg></div>
+          <div class="prcl"></div>
+          <div class="prct">Receive Files</div>
+          <p class="prcd">Print-ready files in your format &mdash; STL, STEP, OBJ, FBX, 3MF. Pre-supported versions
+            included for resin prints.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testi">
+    <div class="sw">
+      <div class="teh rv">
+        <div class="sk">Client Reviews</div>
+        <h2>They Trusted Us.<br>See What Happened.</h2>
+        <p style="margin-top:14px">From individual hobbyists to engineering companies &mdash; real words from real
+          clients.</p>
+      </div>
+      <div class="teg">
+
+        <div class="tec rv">
+          <div class="tst"><svg viewBox="0 0 14 14" fill="#fbbf24">
+              <path d="M7 1l1.5 4.5H14l-4 3 1.5 4.5L7 10.5 2.5 13l1.5-4.5-4-3H5.5z" />
+            </svg><svg viewBox="0 0 14 14" fill="#fbbf24">
+              <path d="M7 1l1.5 4.5H14l-4 3 1.5 4.5L7 10.5 2.5 13l1.5-4.5-4-3H5.5z" />
+            </svg><svg viewBox="0 0 14 14" fill="#fbbf24">
+              <path d="M7 1l1.5 4.5H14l-4 3 1.5 4.5L7 10.5 2.5 13l1.5-4.5-4-3H5.5z" />
+            </svg><svg viewBox="0 0 14 14" fill="#fbbf24">
+              <path d="M7 1l1.5 4.5H14l-4 3 1.5 4.5L7 10.5 2.5 13l1.5-4.5-4-3H5.5z" />
+            </svg><svg viewBox="0 0 14 14" fill="#fbbf24">
+              <path d="M7 1l1.5 4.5H14l-4 3 1.5 4.5L7 10.5 2.5 13l1.5-4.5-4-3H5.5z" />
+            </svg></div>
+          <p class="tq">I sent a scanned hand drawing of a bracket. Three days later I had a perfect STEP file that went
+            straight to the machinist. Communication was excellent throughout. Won't go anywhere else.</p>
+          <div class="tau">
+            <div class="tavs"><svg viewBox="0 0 40 40" fill="none">
+                <circle cx="20" cy="20" r="18" stroke="#00c8b4" stroke-width="1.2" fill="rgba(0,200,180,.08)" />
+                <circle cx="20" cy="15" r="6" stroke="#00c8b4" stroke-width="1.2" fill="rgba(0,200,180,.12)" />
+                <path d="M6 34c0-8 4-12 14-12s14 4 14 12" stroke="#00c8b4" stroke-width="1.2" stroke-linecap="round" />
+              </svg></div>
+            <div><span class="tan">Rakesh Mehta</span><span class="tar">Mechanical Engineer &middot; Pune</span></div>
+          </div>
+        </div>
+
+        <div class="tec rv" style="transition-delay:.12s">
+          <div class="tst"><svg viewBox="0 0 14 14" fill="#fbbf24">
+              <path d="M7 1l1.5 4.5H14l-4 3 1.5 4.5L7 10.5 2.5 13l1.5-4.5-4-3H5.5z" />
+            </svg><svg viewBox="0 0 14 14" fill="#fbbf24">
+              <path d="M7 1l1.5 4.5H14l-4 3 1.5 4.5L7 10.5 2.5 13l1.5-4.5-4-3H5.5z" />
+            </svg><svg viewBox="0 0 14 14" fill="#fbbf24">
+              <path d="M7 1l1.5 4.5H14l-4 3 1.5 4.5L7 10.5 2.5 13l1.5-4.5-4-3H5.5z" />
+            </svg><svg viewBox="0 0 14 14" fill="#fbbf24">
+              <path d="M7 1l1.5 4.5H14l-4 3 1.5 4.5L7 10.5 2.5 13l1.5-4.5-4-3H5.5z" />
+            </svg><svg viewBox="0 0 14 14" fill="#fbbf24">
+              <path d="M7 1l1.5 4.5H14l-4 3 1.5 4.5L7 10.5 2.5 13l1.5-4.5-4-3H5.5z" />
+            </svg></div>
+          <p class="tq">My BJD doll design came out exactly how I imagined. The joints work perfectly and the face
+            sculpt is stunning. I've ordered three more characters since. Solidus 3D is the real deal.</p>
+          <div class="tau">
+            <div class="tavs"><svg viewBox="0 0 40 40" fill="none">
+                <circle cx="20" cy="20" r="18" stroke="#00c8b4" stroke-width="1.2" fill="rgba(0,200,180,.08)" />
+                <circle cx="20" cy="15" r="6" stroke="#00c8b4" stroke-width="1.2" fill="rgba(0,200,180,.12)" />
+                <path d="M6 34c0-8 4-12 14-12s14 4 14 12" stroke="#00c8b4" stroke-width="1.2" stroke-linecap="round" />
+              </svg></div>
+            <div><span class="tan">Priya Sharma</span><span class="tar">Artist &amp; Doll Collector &middot;
+                Mumbai</span></div>
+          </div>
+        </div>
+
+        <div class="tec rv" style="transition-delay:.24s">
+          <div class="tst"><svg viewBox="0 0 14 14" fill="#fbbf24">
+              <path d="M7 1l1.5 4.5H14l-4 3 1.5 4.5L7 10.5 2.5 13l1.5-4.5-4-3H5.5z" />
+            </svg><svg viewBox="0 0 14 14" fill="#fbbf24">
+              <path d="M7 1l1.5 4.5H14l-4 3 1.5 4.5L7 10.5 2.5 13l1.5-4.5-4-3H5.5z" />
+            </svg><svg viewBox="0 0 14 14" fill="#fbbf24">
+              <path d="M7 1l1.5 4.5H14l-4 3 1.5 4.5L7 10.5 2.5 13l1.5-4.5-4-3H5.5z" />
+            </svg><svg viewBox="0 0 14 14" fill="#fbbf24">
+              <path d="M7 1l1.5 4.5H14l-4 3 1.5 4.5L7 10.5 2.5 13l1.5-4.5-4-3H5.5z" />
+            </svg><svg viewBox="0 0 14 14" fill="#fbbf24">
+              <path d="M7 1l1.5 4.5H14l-4 3 1.5 4.5L7 10.5 2.5 13l1.5-4.5-4-3H5.5z" />
+            </svg></div>
+          <p class="tq">We needed a 1:50 scale model of our commercial building for a client pitch. The detail level was
+            incredible &mdash; our client was floored. We won the contract.</p>
+          <div class="tau">
+            <div class="tavs"><svg viewBox="0 0 40 40" fill="none">
+                <circle cx="20" cy="20" r="18" stroke="#00c8b4" stroke-width="1.2" fill="rgba(0,200,180,.08)" />
+                <circle cx="20" cy="15" r="6" stroke="#00c8b4" stroke-width="1.2" fill="rgba(0,200,180,.12)" />
+                <path d="M6 34c0-8 4-12 14-12s14 4 14 12" stroke="#00c8b4" stroke-width="1.2" stroke-linecap="round" />
+              </svg></div>
+            <div><span class="tan">Anand Kumar</span><span class="tar">Principal Architect &middot; Bangalore</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="sw">
+      <div class="fqi">
+        <div class="rl">
+          <div class="sk">FAQ</div>
+          <h2>Questions<br>We Always<br>Get.</h2>
+          <p style="margin-top:20px;font-size:.95rem;color:var(--mid);font-weight:300;line-height:1.75">Can't find your
+            answer? Reach out and we'll respond within hours.</p><a href="#contact" class="ctap"
+            style="display:inline-flex;margin-top:32px">Ask Us Directly &#8599;</a>
+        </div>
+        <div class="fql rr">
+          <div class="fqit"><button class="fqq" onclick="tf(this)" aria-expanded="false">What file formats do you
+              deliver?<span class="fqib"><svg viewBox="0 0 12 12" fill="none">
+                  <path d="M6 2v8M2 6h8" stroke="#0e0e0e" stroke-width="1.5" stroke-linecap="round" />
+                </svg></span></button>
+            <div class="fqa">We deliver STL, OBJ, FBX, STEP, IGES, 3MF, and native formats (ZBrush ZTL, Fusion 360,
+              Blender .blend). Tell us your workflow and we match it.</div>
+          </div>
+          <div class="fqit"><button class="fqq" onclick="tf(this)" aria-expanded="false">How do I know the model will
+              print correctly?<span class="fqib"><svg viewBox="0 0 12 12" fill="none">
+                  <path d="M6 2v8M2 6h8" stroke="#0e0e0e" stroke-width="1.5" stroke-linecap="round" />
+                </svg></span></button>
+            <div class="fqa">Every model is checked for printability &mdash; wall thickness, overhangs, manifold
+              geometry, and clearance fits. SLA/resin prints include pre-supported versions as standard.</div>
+          </div>
+          <div class="fqit"><button class="fqq" onclick="tf(this)" aria-expanded="false">I only have a hand sketch. Can
+              you work from it?<span class="fqib"><svg viewBox="0 0 12 12" fill="none">
+                  <path d="M6 2v8M2 6h8" stroke="#0e0e0e" stroke-width="1.5" stroke-linecap="round" />
+                </svg></span></button>
+            <div class="fqa">Absolutely. We work from hand sketches, napkin drawings, photos, and verbal descriptions.
+              We ask the right questions and fill in the gaps confidently.</div>
+          </div>
+          <div class="fqit"><button class="fqq" onclick="tf(this)" aria-expanded="false">Do you offer rush / urgent
+              delivery?<span class="fqib"><svg viewBox="0 0 12 12" fill="none">
+                  <path d="M6 2v8M2 6h8" stroke="#0e0e0e" stroke-width="1.5" stroke-linecap="round" />
+                </svg></span></button>
+            <div class="fqa">Yes &mdash; contact us and describe your deadline. Rush projects are available depending on
+              our queue and may have an expedite fee for very tight timelines.</div>
+          </div>
+          <div class="fqit"><button class="fqq" onclick="tf(this)" aria-expanded="false">Do you print models, or only
+              design?<span class="fqib"><svg viewBox="0 0 12 12" fill="none">
+                  <path d="M6 2v8M2 6h8" stroke="#0e0e0e" stroke-width="1.5" stroke-linecap="round" />
+                </svg></span></button>
+            <div class="fqa">We are a design-only studio &mdash; we deliver digital files. We can recommend trusted
+              print services in India if you don't have a printer.</div>
+          </div>
+          <div class="fqit"><button class="fqq" onclick="tf(this)" aria-expanded="false">Are my designs kept
+              confidential?<span class="fqib"><svg viewBox="0 0 12 12" fill="none">
+                  <path d="M6 2v8M2 6h8" stroke="#0e0e0e" stroke-width="1.5" stroke-linecap="round" />
+                </svg></span></button>
+            <div class="fqa">Yes. We sign NDAs on request and never share, showcase, or use client designs without
+              explicit written permission. Your intellectual property is yours entirely.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="sw">
+      <div class="coi">
+        <div class="col rl">
+          <div class="sk" style="color:var(--cyan)">Get in Touch</div>
+          <h2>Let's Build<br>Something<br><em>Together.</em></h2>
+          <p>Our team responds within 24 hours with a detailed quote, timeline and DFM feedback. No commitment needed.
+            Serving B2B clients worldwide.</p>
+          <div class="cdt"><span class="cdl">Email</span><span class="cdv"><a
+                href="mailto:info@solidus3dmodeling.com">info@solidus3dmodeling.com</a></span></div>
+          <div class="cdt"><span class="cdl">Phone</span><span class="cdv"><a href="tel:+917888091843">+91
+                7888091843</a></span></div>
+          <div class="cdt"><span class="cdl">Address</span><span class="cdv">Peenya Industrial Area, Phase
+              IV<br>Karnataka 560058, India</span></div>
+          <div class="cdt"><span class="cdl">Follow</span><span class="cdv"><a href="#" target="_blank"
+                rel="noopener">Facebook</a>&nbsp;&middot;&nbsp;<a href="#" target="_blank"
+                rel="noopener">Instagram</a>&nbsp;&middot;&nbsp;<a href="#" target="_blank"
+                rel="noopener">LinkedIn</a></span></div>
+        </div>
+        <form class="cf rr" id="cf" onsubmit="hs(event)" novalidate>
+          <div class="cfr">
+            <div class="cff2"><label for="fn">First Name *</label><input type="text" id="fn" name="first_name"
+                placeholder="John" required autocomplete="given-name"></div>
+            <div class="cff2"><label for="ln">Last Name</label><input type="text" id="ln" name="last_name"
+                placeholder="Doe" autocomplete="family-name"></div>
+          </div>
+          <div class="cfr">
+            <div class="cff2"><label for="em">Email *</label><input type="email" id="em" name="email"
+                placeholder="john@company.com" required autocomplete="email"></div>
+            <div class="cff2"><label for="ph">Phone / WhatsApp</label><input type="tel" id="ph" name="phone"
+                placeholder="+1 800 000 0000"></div>
+          </div>
+          <div class="cfr">
+            <div class="cff2"><label for="co">Company</label><input type="text" id="co" name="company"
+                placeholder="Acme Manufacturing Ltd."></div>
+            <div class="cff2"><label for="cy">Country</label><input type="text" id="cy" name="country"
+                placeholder="United States"></div>
+          </div>
+          <div class="cfr cff">
+            <div class="cff2"><label for="sv">Service Required *</label><select id="sv" name="service" required>
+                <option value="">Choose a service&hellip;</option>
+                <option>Mechanical Modeling</option>
+                <option>2D to 3D Conversion</option>
+                <option>Sculpture &amp; Artistic Design</option>
+                <option>BJD Doll Design</option>
+                <option>3D Print-Ready Models</option>
+                <option>Building &amp; Architecture</option>
+              </select></div>
+          </div>
+          <div class="cfr cff">
+            <div class="cff2"><label for="dt">Project Details</label><textarea id="dt" name="details"
+                placeholder="Describe your project &mdash; dimensions, materials, end-use, quantity, deadline&hellip;"></textarea>
+            </div>
+          </div>
+          <div class="cfs">
+            <span class="cfn"><svg viewBox="0 0 64 64" fill="none">
+                <path d="M32 4L8 14V32C8 45.3 18.7 57.6 32 60C45.3 57.6 56 45.3 56 32V14L32 4Z"
+                  stroke="rgba(0,200,180,.6)" stroke-width="2" fill="none" />
+                <path d="M21 32l8 8 14-14" stroke="#00c8b4" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" fill="none" />
+              </svg> NDA available on request. Data never shared.</span>
+            <button type="submit" class="sbtn" id="sbtn">Send Request &#8594;</button>
+          </div>
+          <div id="fmsg"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="fti">
+      <div class="ftt">
+        <div><a href="#hero" class="logo" style="color:#fff">SOLIDUS<b>.</b>3D</a>
+          <p class="fbp">Precision 3D modeling studio serving B2B companies worldwide &mdash; NDA-protected, unlimited
+            revisions, globally delivered.</p>
+        </div>
+        <div class="fc5">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="#services">Mechanical Modeling</a></li>
+            <li><a href="#services">2D to 3D Conversion</a></li>
+            <li><a href="#services">Sculpture Design</a></li>
+            <li><a href="#services">BJD Doll Design</a></li>
+            <li><a href="#services">Print-Ready Models</a></li>
+            <li><a href="#services">Architecture Models</a></li>
+          </ul>
+        </div>
+        <div class="fc5">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="#portfolio">Our Work</a></li>
+            <li><a href="#why">Why Solidus 3D</a></li>
+            <li><a href="#process">Our Process</a></li>
+            <li><a href="#testi">Reviews</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Get a Quote</a></li>
+          </ul>
+        </div>
+        <div class="fc5">
+          <h5>Legal</h5>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms &amp; Conditions</a></li>
+            <li><a href="#">NDA Policy</a></li>
+            <li><a href="#">Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="ftb">
+        <p>&copy; 2021&ndash;2026 Solidus 3D Modeling. All Rights Reserved.</p>
+        <p>One Studio. <span style="color:var(--cyan)">Every 3D Discipline.</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script>
+    // CURSOR
+    var cur = document.getElementById('cur'), curR = document.getElementById('curR'), mx = 0, my = 0, rx = 0, ry = 0;
+    document.addEventListener('mousemove', function (e) { mx = e.clientX; my = e.clientY; cur.style.left = mx + 'px'; cur.style.top = my + 'px' });
+    (function t() { rx += (mx - rx) * .12; ry += (my - ry) * .12; curR.style.left = rx + 'px'; curR.style.top = ry + 'px'; requestAnimationFrame(t) })();
+    document.querySelectorAll('a,button,.svr,.bc,.prce,.htg,.b2bcard,.pc,.fqq').forEach(function (el) {
+      el.addEventListener('mouseenter', function () { cur.style.width = '22px'; cur.style.height = '22px' });
+      el.addEventListener('mouseleave', function () { cur.style.width = '12px'; cur.style.height = '12px' });
+    });
+
+    // NAV SCROLL
+    var nav = document.getElementById('nav');
+    window.addEventListener('scroll', function () { nav.classList.toggle('sc', scrollY > 40) }, { passive: true });
+
+    // MOBILE NAV
+    function cn() { document.getElementById('mob').classList.remove('open'); document.getElementById('hbtn').setAttribute('aria-expanded', 'false') }
+    document.getElementById('hbtn').addEventListener('click', function () { var o = document.getElementById('mob').classList.toggle('open'); this.setAttribute('aria-expanded', o) });
+
+    // THREE.JS
+    (function () {
+      if (typeof THREE === 'undefined') return;
+      var hero = document.getElementById('hero');
+      var canvas = document.createElement('canvas');
+      canvas.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;opacity:.2';
+      hero.prepend(canvas);
+      var R = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+      R.setPixelRatio(Math.min(devicePixelRatio, 1.5)); R.setClearColor(0, 0);
+      var S = new THREE.Scene(), C = new THREE.PerspectiveCamera(60, 1, .1, 100);
+      C.position.set(0, 0, 5);
+      function resize() { var w = canvas.offsetWidth || innerWidth, h = canvas.offsetHeight || innerHeight; R.setSize(w, h, false); C.aspect = w / h; C.updateProjectionMatrix() }
+      resize(); window.addEventListener('resize', resize, { passive: true });
+      var ico = new THREE.Mesh(new THREE.IcosahedronGeometry(1.6, 1), new THREE.MeshBasicMaterial({ color: 0x00c8b4, wireframe: true, transparent: true, opacity: .18 })); S.add(ico);
+      var sph = new THREE.Mesh(new THREE.SphereGeometry(.85, 12, 12), new THREE.MeshBasicMaterial({ color: 0x00c8b4, wireframe: true, transparent: true, opacity: .07 })); S.add(sph);
+      var tor = new THREE.Mesh(new THREE.TorusGeometry(2.3, .012, 4, 64), new THREE.MeshBasicMaterial({ color: 0x00c8b4, transparent: true, opacity: .13 })); tor.rotation.x = Math.PI / 2.5; S.add(tor);
+      var n = 140, p = new Float32Array(n * 3); for (var i = 0; i < n; i++) { p[i * 3] = (Math.random() - .5) * 10; p[i * 3 + 1] = (Math.random() - .5) * 10; p[i * 3 + 2] = (Math.random() - .5) * 6; }
+      var pg = new THREE.BufferGeometry(); pg.setAttribute('position', new THREE.BufferAttribute(p, 3)); S.add(new THREE.Points(pg, new THREE.PointsMaterial({ color: 0x00c8b4, size: .03, transparent: true, opacity: .35 })));
+      var sy = 0, t = 0; window.addEventListener('scroll', function () { sy = scrollY }, { passive: true });
+      (function a() { requestAnimationFrame(a); t += .007; ico.rotation.x = t * .4; ico.rotation.y = t * .6; sph.rotation.x = -t * .5; sph.rotation.y = t * .8; tor.rotation.z = t * .3; ico.position.y = -sy * .001; tor.position.y = -sy * .0005; R.render(S, C) })();
+    })();
+
+    // SCROLL REVEAL
+    var obs = new IntersectionObserver(function (en) { en.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target) } }) }, { threshold: .08 });
+    document.querySelectorAll('.rv,.rl,.rr').forEach(function (el) { obs.observe(el) });
+
+    // COUNTER
+    function ac(el, tg, sfx) { var s = null; (function step(ts) { if (!s) s = ts; var p = Math.min((ts - s) / 1800, 1), e = 1 - Math.pow(1 - p, 3); el.textContent = Math.floor(e * tg).toLocaleString() + sfx; if (p < 1) requestAnimationFrame(step) })(performance.now()) }
+    var po = new IntersectionObserver(function (en) { if (en[0].isIntersecting) { document.querySelectorAll('[data-target]').forEach(function (h) { ac(h, +h.dataset.target, h.dataset.suffix || '') }); po.disconnect() } }, { threshold: .3 });
+    var ps = document.getElementById('proof'); if (ps) po.observe(ps);
+
+    // HERO PARALLAX
+    var hc2 = document.querySelector('.hc');
+    if (hc2) { document.addEventListener('mousemove', function (e) { var dx = (e.clientX - innerWidth / 2) / innerWidth, dy = (e.clientY - innerHeight / 2) / innerHeight; hc2.style.transform = 'perspective(1200px) rotateY(' + (dx * 1.2) + 'deg) rotateX(' + (-dy * 1.2) + 'deg)' }, { passive: true }); }
+
+    // PORTFOLIO FILTER
+    function fp(btn, cat) {
+      document.querySelectorAll('.pfb').forEach(function (b) { b.classList.remove('ac') });
+      btn.classList.add('ac');
+      document.querySelectorAll('.pc').forEach(function (c) { c.style.display = (cat === 'all' || c.dataset.cat === cat) ? 'block' : 'none' });
+    }
+
+    // FAQ
+    function tf(btn) {
+      var item = btn.closest('.fqit'), isOpen = item.classList.contains('op');
+      document.querySelectorAll('.fqit.op').forEach(function (i) { i.classList.remove('op'); i.querySelector('.fqq').setAttribute('aria-expanded', 'false') });
+      if (!isOpen) { item.classList.add('op'); btn.setAttribute('aria-expanded', 'true'); }
+    }
+
+    // FORM
+    function hs(e) {
+      e.preventDefault();
+      var fn = document.getElementById('fn').value.trim(), em = document.getElementById('em').value.trim(), sv = document.getElementById('sv').value;
+      var msg = document.getElementById('fmsg'), btn = document.getElementById('sbtn');
+      if (!fn || !em || !sv) { msg.style.cssText = 'display:block;background:rgba(230,60,47,.1);color:#e63c2f;padding:14px 22px;margin-top:1px;font-family:var(--M);font-size:11px;letter-spacing:.1em'; msg.textContent = 'Please fill in all required fields.'; return; }
+      btn.textContent = 'Sending\u2026'; btn.disabled = true;
+      setTimeout(function () {
+        msg.style.cssText = 'display:block;background:rgba(0,200,180,.08);color:var(--cyan);padding:14px 22px;margin-top:1px;font-family:var(--M);font-size:11px;letter-spacing:.1em';
+        msg.textContent = '\u2713 Request sent \u2014 our team responds within 24 hours.';
+        btn.textContent = 'Send Request \u2192'; btn.disabled = false;
+        document.getElementById('cf').reset();
+      }, 900);
+    }
+  </script>
+</body>
+
+</html>
