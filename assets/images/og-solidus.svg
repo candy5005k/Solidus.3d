@@ -1,0 +1,19 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#15212f"/>
+      <stop offset="50%" stop-color="#176d73"/>
+      <stop offset="100%" stop-color="#c85f2b"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c85f2b"/>
+      <stop offset="100%" stop-color="#e1a84b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" rx="32"/>
+  <rect x="80" y="88" width="110" height="110" rx="28" fill="url(#accent)"/>
+  <text x="135" y="156" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="48" font-weight="700" fill="#ffffff">S3</text>
+  <text x="80" y="290" font-family="'Sora', sans-serif" font-size="72" font-weight="800" fill="#ffffff">Solidus 3D Modeling</text>
+  <text x="80" y="360" font-family="'Sora', sans-serif" font-size="32" fill="#f6e8da">Precision CAD, reverse engineering, print-ready models, and product visuals.</text>
+  <text x="80" y="470" font-family="'IBM Plex Mono', monospace" font-size="24" fill="#ffffff">support@solidus3dmodeling.com / +91 7420866709</text>
+</svg>

@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You | Solidus.3D Modeling</title>
+  <meta name="description" content="Thank you for connecting with Solidus.3D Modeling. Your request has been received and our engineering team will be in touch shortly.">
+  <meta name="robots" content="noindex,nofollow">
+
+  <!-- â•â•â• Google Ads Global Site Tag (gtag.js) â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+       âš  REPLACE G-XXXXXXXXXX with your actual Google Ads Conversion ID
+       âš  REPLACE AW-XXXXXXXXXX/XXXXXXX with your actual Conversion Label
+  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'AW-XXXXXXXXXX');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --blue: #2563eb;
+      --blue2: #3b82f6;
+      --blue-dk: #1d4ed8;
+      --blue-lt: #dbeafe;
+      --ink: #111827;
+      --body: #4b5563;
+      --mid: #6b7280;
+      --line: rgba(17,24,39,.1);
+      --white: #fff;
+      --dark: #0f172a;
+      --green: #10b981;
+      --green-lt: #d1fae5;
+      --D: 'Bebas Neue', sans-serif;
+      --B: 'Plus Jakarta Sans', system-ui, sans-serif;
+      --M: 'DM Mono', monospace;
+      --radius: 12px;
+      --radius-sm: 6px;
+      --ease: cubic-bezier(.22,1,.36,1);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      padding-top: 72px;
+      font-family: var(--B);
+      color: var(--body);
+      background:
+        radial-gradient(circle at 20% 20%, rgba(16,185,129,.1), transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(37,99,235,.12), transparent 40%),
+        linear-gradient(180deg, #eef5ff 0%, #fff 40%, #f0fdf4 100%);
+      min-height: 100vh;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+
+    /* â”€â”€â”€ Mobile menu â”€â”€â”€ */
+    .mob {
+      position: fixed;
+      top: 72px; left: 0; right: 0; bottom: 0;
+      background: var(--white);
+      z-index: 750;
+      display: flex;
+      flex-direction: column;
+      padding: 40px 32px;
+      gap: 20px;
+      transform: translateX(100%);
+      transition: transform .35s ease;
+    }
+    .mob.open { transform: translateX(0); }
+    .mob a {
+      font-family: var(--D);
+      font-size: 2.2rem;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .mob a:hover { color: var(--blue); }
+
+    /* â”€â”€â”€ Nav â”€â”€â”€ */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 800;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 0 48px;
+      height: 72px;
+      background: rgba(255,255,255,.97);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(37,99,235,.08);
+      transition: box-shadow .3s, background .3s, border-color .3s;
+    }
+    nav.sc {
+      box-shadow: 0 4px 32px rgba(37,99,235,.25);
+      background: var(--blue);
+      border-color: rgba(37,99,235,.4);
+    }
+    .logo-link {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .logo-link img { display: block; height: 44px; width: auto; }
+    
+
+    .nl { display: flex; gap: 2px; list-style: none; margin: 0; padding: 0; align-items: center; }
+    .nl > li { position: relative; }
+    .nl > li > a {
+      font-family: var(--M); font-size: 12px; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--mid); text-decoration: none;
+      padding: 8px 14px; display: flex; align-items: center; gap: 5px;
+      border-radius: var(--radius-sm); font-weight: 500;
+      transition: color .2s, background .2s;
+    }
+    .nl > li > a:hover { color: var(--blue); background: var(--blue-lt); }
+    nav.sc .nl > li > a { color: rgba(255,255,255,.75); }
+    nav.sc .nl > li > a:hover { color: var(--white); background: rgba(255,255,255,.15); }
+    .nav-arr { font-size: 8px; transition: transform .2s; opacity: .5; }
+    .nl > li:hover .nav-arr { transform: rotate(180deg); }
+
+    .dd {
+      position: absolute; top: calc(100% + 14px); left: 50%;
+      transform: translateX(-50%) translateY(10px);
+      background: #fff; border: 1px solid rgba(17,24,39,.08);
+      box-shadow: 0 32px 80px rgba(15,23,42,.18), 0 4px 16px rgba(37,99,235,.07);
+      width: 820px; max-width: 95vw; padding: 0;
+      opacity: 0; visibility: hidden;
+      transition: opacity .28s cubic-bezier(.4,0,.2,1), transform .28s cubic-bezier(.4,0,.2,1), visibility .28s;
+      z-index: 700; border-radius: 18px; overflow: hidden;
+    }
+    .nl > li:hover .dd { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+    .dd-inner { display: grid; grid-template-columns: 1fr 1fr 1fr; }
+    .dd-col { padding: 22px 18px 20px; border-right: 1px solid rgba(17,24,39,.08); }
+    .dd-col:last-child { border-right: none; }
+    .dd-col-head {
+      display: flex; align-items: center; gap: 8px;
+      padding: 0 4px 12px; margin-bottom: 4px;
+      border-bottom: 1px solid #dbeafe;
+      font-size: 9.5px; letter-spacing: .2em;
+      text-transform: uppercase; color: #2563eb; font-weight: 600;
+    }
+    .dd-col-head svg { width: 14px; height: 14px; flex-shrink: 0; }
+    .dd a {
+      display: flex; align-items: center; gap: 10px; padding: 9px 10px;
+      font-size: 13.5px; color: #111827; text-decoration: none;
+      transition: background .15s, color .15s, transform .15s, border-color .15s;
+      font-weight: 500; border-radius: 10px; border: 1px solid transparent;
+    }
+    .dd a:hover { background: #dbeafe; color: #2563eb; border-color: rgba(37,99,235,.14); transform: translateX(3px); }
+    .dd svg { width: 16px; height: 16px; flex-shrink: 0; }
+    .dd-footer {
+      background: linear-gradient(90deg,#eff6ff 0%,#e0edff 100%);
+      border-top: 1px solid #dbeafe; padding: 11px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .dd-footer a {
+      font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase;
+      color: #2563eb; text-decoration: none; display: flex; align-items: center;
+      gap: 6px; font-weight: 600; transition: gap .15s, opacity .15s;
+    }
+    .dd-footer a:hover { gap: 10px; opacity: .85; }
+    .dd-footer span { font-size: 11px; color: #6b7280; font-weight: 400; text-transform: none; letter-spacing: 0; }
+
+    .nbtn {
+      background: var(--blue); color: var(--white);
+      font-family: var(--M); font-size: 12px; letter-spacing: .12em;
+      text-transform: uppercase; padding: 12px 24px; border: none; cursor: pointer;
+      text-decoration: none; border-radius: var(--radius-sm); font-weight: 500;
+      display: inline-block; transition: background .2s, transform .15s;
+    }
+    .nbtn:hover { background: var(--blue-dk); transform: translateY(-1px); }
+    nav.sc .nbtn { background: var(--white); color: var(--blue); }
+    .ham {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 4px;
+    }
+    .ham span { display: block; width: 24px; height: 2px; background: var(--ink); transition: all .3s; }
+    nav.sc .ham span { background: var(--white); }
+
+    /* â”€â”€â”€ Main content â”€â”€â”€ */
+    .page {
+      width: min(1100px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 80px 0 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* â”€â”€â”€ Success card â”€â”€â”€ */
+    .ty-card {
+      width: 100%;
+      max-width: 700px;
+      background: rgba(255,255,255,.92);
+      border: 1px solid rgba(16,185,129,.2);
+      border-radius: 28px;
+      box-shadow: 0 24px 70px rgba(15,23,42,.1);
+      padding: 52px 48px 44px;
+      text-align: center;
+      animation: cardIn .7s var(--ease) forwards;
+      position: relative;
+      overflow: hidden;
+    }
+    .ty-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--green), var(--blue));
+      border-radius: 28px 28px 0 0;
+    }
+
+    @keyframes cardIn {
+      from { opacity: 0; transform: translateY(32px) scale(.96); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    /* â”€â”€â”€ Check icon â”€â”€â”€ */
+    .ty-icon {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--green-lt), #a7f3d0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 28px;
+      animation: iconPop .6s .3s var(--ease) both;
+    }
+    @keyframes iconPop {
+      from { opacity: 0; transform: scale(.4); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+    .ty-icon svg { width: 42px; height: 42px; }
+
+    .ty-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+      color: var(--green);
+      font-family: var(--M);
+      font-size: 11px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      background: var(--green-lt);
+      padding: 7px 16px;
+      border-radius: 999px;
+    }
+    .ty-eyebrow::before {
+      content: '';
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: .5; transform: scale(1.4); }
+    }
+
+    .ty-card h1 {
+      margin: 0 0 14px;
+      color: var(--ink);
+      font-family: var(--B);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -.03em;
+    }
+    .ty-card h1 span { color: var(--blue); }
+    .ty-card > p {
+      margin: 0 0 32px;
+      color: var(--mid);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      max-width: 52ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* â”€â”€â”€ What next steps â”€â”€â”€ */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 0 0 36px;
+      text-align: left;
+    }
+    .step {
+      padding: 18px 16px;
+      background: linear-gradient(135deg, #f8fafc, #eff6ff);
+      border: 1px solid rgba(37,99,235,.1);
+      border-radius: 14px;
+    }
+    .step-num {
+      font-family: var(--D);
+      font-size: 1.9rem;
+      color: var(--blue);
+      letter-spacing: .04em;
+      line-height: 1;
+      margin-bottom: 10px;
+      opacity: .5;
+    }
+    .step h4 {
+      margin: 0 0 6px;
+      color: var(--ink);
+      font-size: .92rem;
+      font-weight: 700;
+      font-family: var(--B);
+      line-height: 1.3;
+    }
+    .step p {
+      margin: 0;
+      font-size: .82rem;
+      color: var(--mid);
+      line-height: 1.6;
+    }
+
+    /* â”€â”€â”€ CTA buttons â”€â”€â”€ */
+    .ty-actions {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+    .btn1 {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 16px 36px; text-decoration: none;
+      border-radius: var(--radius-sm);
+      background: var(--blue); color: #fff;
+      font-family: var(--B); font-size: 15px; font-weight: 700;
+      box-shadow: 0 4px 20px rgba(37,99,235,.3);
+      transition: transform .2s var(--ease), box-shadow .2s, background .2s;
+    }
+    .btn1:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(37,99,235,.38); background: var(--blue-dk); }
+    .btn2 {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 15px 32px; text-decoration: none;
+      border-radius: var(--radius-sm);
+      background: transparent; border: 2px solid var(--line); color: var(--ink);
+      font-family: var(--B); font-size: 15px; font-weight: 600;
+      transition: transform .2s var(--ease), border-color .2s, color .2s, background .2s;
+    }
+    .btn2:hover { transform: translateY(-2px); border-color: var(--blue); color: var(--blue); background: var(--blue-lt); }
+
+    /* â”€â”€â”€ Redirect timer â”€â”€â”€ */
+    .redirect-bar {
+      font-family: var(--M);
+      font-size: 11px;
+      color: var(--mid);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .redirect-bar span { color: var(--blue); font-weight: 600; }
+
+    /* â”€â”€â”€ Trust row â”€â”€â”€ */
+    .trust-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .82rem;
+      color: var(--mid);
+      font-family: var(--M);
+      letter-spacing: .08em;
+    }
+    .trust-item svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+    /* â”€â”€â”€ Confetti dots (CSS only) â”€â”€â”€ */
+    .confetti-ring {
+      position: absolute;
+      top: -60px; left: 50%; transform: translateX(-50%);
+      pointer-events: none;
+    }
+    .cr { width: 8px; height: 8px; border-radius: 50%; position: absolute; }
+    .cr:nth-child(1)  { background:#2563eb; animation: fly1 2s .1s both ease-out; }
+    .cr:nth-child(2)  { background:#10b981; animation: fly2 2s .2s both ease-out; }
+    .cr:nth-child(3)  { background:#3b82f6; animation: fly3 2s .3s both ease-out; }
+    .cr:nth-child(4)  { background:#f59e0b; animation: fly4 2s .15s both ease-out; }
+    .cr:nth-child(5)  { background:#ec4899; animation: fly5 2s .25s both ease-out; }
+    .cr:nth-child(6)  { background:#10b981; animation: fly6 2s .05s both ease-out; }
+    @keyframes fly1 { 0%{opacity:1;transform:translate(0,0) scale(1)} 100%{opacity:0;transform:translate(-120px, 200px) scale(.3)} }
+    @keyframes fly2 { 0%{opacity:1;transform:translate(0,0) scale(1)} 100%{opacity:0;transform:translate(80px, 240px) scale(.4)} }
+    @keyframes fly3 { 0%{opacity:1;transform:translate(0,0) scale(1)} 100%{opacity:0;transform:translate(-60px, 180px) scale(.5)} }
+    @keyframes fly4 { 0%{opacity:1;transform:translate(0,0) scale(1)} 100%{opacity:0;transform:translate(140px, 210px) scale(.3)} }
+    @keyframes fly5 { 0%{opacity:1;transform:translate(0,0) scale(1.2)} 100%{opacity:0;transform:translate(-90px, 260px) scale(.2)} }
+    @keyframes fly6 { 0%{opacity:1;transform:translate(0,0) scale(1)} 100%{opacity:0;transform:translate(40px, 220px) scale(.6)} }
+
+    /* â”€â”€â”€ Footer â”€â”€â”€ */
+    footer { background: var(--dark); padding: 56px 48px 28px; margin-top: 22px; }
+    .fti { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+    .ftt { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 44px; border-bottom: 1px solid rgba(255,255,255,.07); }
+    .fbp { font-size: .9rem; color: rgba(255,255,255,.35); line-height: 1.7; max-width: 320px; margin-top: 14px; }
+    .fc5 h5 { font-family: var(--M); font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--blue2); margin: 0 0 18px; font-weight: 500; }
+    .fc5 ul { list-style: none; display: flex; flex-direction: column; gap: 10px; margin: 0; padding: 0; }
+    .fc5 a, footer a { font-size: .9rem; color: rgba(255,255,255,.35); text-decoration: none; transition: color .2s; display: inline-block; }
+    .fc5 a:hover, footer a:hover { color: var(--white); }
+    .ftb { display: flex; justify-content: space-between; align-items: center; padding-top: 24px; flex-wrap: wrap; gap: 12px; }
+    .ftb p { margin: 0; font-family: var(--M); font-size: 11px; color: rgba(255,255,255,.2); font-weight: 500; }
+
+
+    /* â”€â”€â”€ Responsive â”€â”€â”€ */
+    @media (max-width: 1100px) {
+      nav { padding: 0 24px; }
+      .nl, .nbtn { display: none; }
+      .ham { display: flex; }
+      .ftt { grid-template-columns: 1fr; }
+      footer { padding: 40px 24px 24px; }
+    }
+    @media (max-width: 700px) {
+      .ty-card { padding: 36px 22px 32px; }
+      .steps { grid-template-columns: 1fr; }
+      .ty-actions { flex-direction: column; align-items: stretch; }
+      .btn1, .btn2 { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Mobile menu -->
+  <div class="mob" id="mob">
+    <a href="services/index.html" onclick="cn()">Services</a>
+    <a href="index.html#portfolio" onclick="cn()">Our Work</a>
+    <a href="index.html#why" onclick="cn()">Why Us</a>
+    <a href="index.html#process" onclick="cn()">Process</a>
+    <a href="index.html#testi" onclick="cn()">Reviews</a>
+    <a href="index.html#faq" onclick="cn()">FAQ</a>
+    <a href="index.html#contact" class="nbtn" style="margin-top:8px;text-align:center" onclick="cn()">Get a Quote</a>
+  </div>
+
+  <!-- Full site nav -->
+  <nav id="nav" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="logo-link" aria-label="Solidus 3D Modeling Home">
+      <img id="logo-default" src="assets/images/logo-solidus-main.png" alt="Solidus 3D Modeling" height="44" style="display:block;width:auto">
+      <img id="logo-scrolled" src="assets/images/logo-solidus-light.png" alt="Solidus 3D Modeling" height="44" style="display:none;width:auto">
+    </a>
+    <ul class="nl" role="list">
+      <li>
+        <a href="services/index.html">Services <span class="nav-arr">&#9660;</span></a>
+        <div class="dd" role="menu">
+          <div class="dd-inner">
+            <div class="dd-col">
+              <div class="dd-col-head">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#2563eb" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Design &amp; CAD
+              </div>
+              <a href="services/index.html#cad-modeling"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="#2563eb" stroke-width="1.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"/></svg>Design Services</a>
+              <a href="services/index.html#cad-modeling"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="#2563eb" stroke-width="1.5"/><path d="M8 12h8M12 8v8" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"/></svg>3D CAD Modeling</a>
+              <a href="services/index.html#reverse-engineering"><svg viewBox="0 0 24 24" fill="none"><path d="M7 7h10a4 4 0 010 8h-1" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"/><path d="M10 19l-4-4 4-4" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Reverse Engineering</a>
+              <a href="services/index.html#2d-to-3d-conversion"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="7" width="8" height="10" rx="1" stroke="#2563eb" stroke-width="1.5"/><path d="M14 5l6 7-6 7M14 12h6" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>2D to 3D Conversion</a>
+            </div>
+            <div class="dd-col">
+              <div class="dd-col-head">
+                <svg viewBox="0 0 24 24" fill="none"><rect x="4" y="14" width="16" height="6" rx="1" stroke="#2563eb" stroke-width="1.5"/><path d="M8 14V5h8v9" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"/></svg>
+                3D Printing &amp; Mfg
+              </div>
+              <a href="services/index.html#3d-printing-service"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="14" width="16" height="6" rx="1" stroke="#2563eb" stroke-width="1.5"/><path d="M8 14V5h8v9" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"/></svg>3D Printing Service</a>
+              <a href="services/index.html#cnc-machining-support"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="12" height="8" rx="1.5" stroke="#2563eb" stroke-width="1.5"/><path d="M16 10h4M20 8v4M8 16v3M6 19h8" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"/></svg>CNC Machining Support</a>
+              <a href="services/index.html#vacuum-casting"><svg viewBox="0 0 24 24" fill="none"><path d="M6 5h12v4l-3 4v5l-6 1v-6L6 9V5z" stroke="#2563eb" stroke-width="1.5" stroke-linejoin="round"/></svg>Vacuum Casting</a>
+              <a href="services/index.html#profile-cutting"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="10" height="14" rx="1.5" stroke="#2563eb" stroke-width="1.5"/><path d="M18 7v10M16 9l4 4-4 4" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Profile Cutting</a>
+            </div>
+            <div class="dd-col">
+              <div class="dd-col-head">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="#2563eb" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                Specialty &amp; Creative
+              </div>
+              <a href="services/index.html#trophy"><svg viewBox="0 0 24 24" fill="none"><path d="M7 4h10v8a5 5 0 01-10 0V4z" stroke="#2563eb" stroke-width="1.5" stroke-linejoin="round"/><path d="M7 7H4a2 2 0 000 4h3M17 7h3a2 2 0 010 4h-3M12 17v3M9 20h6" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"/></svg>Trophy Design</a>
+              <a href="services/index.html#display"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" stroke="#2563eb" stroke-width="1.5"/><path d="M8 21h8M12 17v4" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"/></svg>Display Modeling</a>
+              <a href="services/index.html#character"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="#2563eb" stroke-width="1.5"/><path d="M4 20c0-4 3.58-7 8-7s8 3 8 7" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"/></svg>Character Modeling</a>
+            </div>
+          </div>
+          <div class="dd-footer">
+            <a href="services/index.html">Browse All Services &rarr;</a>
+            <span>Trusted by 200+ global clients</span>
+          </div>
+        </div>
+      </li>
+      <li><a href="index.html#portfolio">Our Work</a></li>
+      <li><a href="index.html#why">Why Us</a></li>
+      <li><a href="index.html#process">Process</a></li>
+      <li><a href="index.html#testi">Reviews</a></li>
+      <li><a href="index.html#faq">FAQ</a></li>
+    </ul>
+    <a href="index.html#contact" class="nbtn">Get a Quote</a>
+    <button class="ham" id="hbtn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- â•â• MAIN CONTENT â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+  <main class="page">
+    <div class="ty-card" id="ty-card">
+
+      <!-- Confetti -->
+      <div class="confetti-ring" aria-hidden="true">
+        <div class="cr"></div><div class="cr"></div><div class="cr"></div>
+        <div class="cr"></div><div class="cr"></div><div class="cr"></div>
+      </div>
+
+      <!-- Check icon -->
+      <div class="ty-icon">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M5 13l4 4L19 7" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <!-- Dynamic badge & heading -->
+      <div class="ty-eyebrow" id="ty-eyebrow">Request Received</div>
+      <h1 id="ty-heading">Thank <span>You!</span></h1>
+      <p id="ty-desc">We've received your submission and our engineering team will be in touch within 24 hours. You'll receive a confirmation on your email shortly.</p>
+
+      <!-- What happens next -->
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <h4>Confirmation Email</h4>
+          <p>Check your inbox for a confirmation with your submission details.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <h4>Engineer Review</h4>
+          <p>Our team reviews your requirements and prepares a tailored quote or proposal.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <h4>Project Kickoff</h4>
+          <p>Approve the quote and we begin your precision 3D modeling project immediately.</p>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="ty-actions">
+        <a class="btn1" href="index.html">Back to Home</a>
+        <a class="btn2" href="services/index.html">Explore Services</a>
+      </div>
+
+      <!-- Redirect timer -->
+      <p class="redirect-bar">
+        Redirecting to home in <span id="countdown">10</span> seconds&hellip;
+        &nbsp;&nbsp;<a href="index.html" style="color:var(--blue);text-decoration:underline;font-size:11px">Go now</a>
+      </p>
+
+    </div>
+
+    <!-- Trust indicators (outside card) -->
+    <div class="trust-row">
+      <span class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#6b7280" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        100% NDA Protected
+      </span>
+      <span class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#6b7280" stroke-width="1.5"/><path d="M9 12l2 2 4-4" stroke="#6b7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        200+ Global Clients
+      </span>
+      <span class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#6b7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        48hr Average Turnaround
+      </span>
+      <span class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="5" y="11" width="14" height="10" rx="2" stroke="#6b7280" stroke-width="1.5"/><path d="M8 11V7a4 4 0 018 0v4" stroke="#6b7280" stroke-width="1.5" stroke-linecap="round"/></svg>
+        SSL Secured
+      </span>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="fti">
+      <div class="ftt">
+        <div>
+          <a href="index.html" class="logo-link" style="display:inline-block;margin-bottom:14px">
+            <img src="assets/images/logo-solidus-light.png" alt="Solidus 3D Modeling" height="42"
+              style="width:auto;display:block;mix-blend-mode:screen;filter:brightness(1.4) contrast(1.1)">
+          </a>
+          <p class="fbp">Manufacturing-focused CAD, CNC, rapid prototyping, and 3D printing support for product teams worldwide.</p>
+        </div>
+        <div class="fc5">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="services/index.html#cad-modeling">3D CAD Modeling</a></li>
+            <li><a href="services/index.html#reverse-engineering">Reverse Engineering</a></li>
+            <li><a href="services/index.html#3d-printing-service">3D Printing Service</a></li>
+            <li><a href="services/index.html#cnc-machining-support">CNC Machining</a></li>
+            <li><a href="services/index.html#vacuum-casting">Vacuum Casting</a></li>
+          </ul>
+        </div>
+        <div class="fc5">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="index.html#portfolio">Our Work</a></li>
+            <li><a href="index.html#why">Why Solidus 3D</a></li>
+            <li><a href="index.html#process">Our Process</a></li>
+            <li><a href="index.html#testi">Reviews</a></li>
+            <li><a href="index.html#contact">Get a Quote</a></li>
+          </ul>
+        </div>
+        <div class="fc5">
+          <h5>Legal</h5>
+          <ul>
+            <li><a href="privacy.php">Privacy Policy</a></li>
+            <li><a href="terms.php">Terms &amp; Conditions</a></li>
+            <li><a href="nda.php">NDA Policy</a></li>
+            <li><a href="sitemap.xml">Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="ftb">
+        <p>&copy; 2021-2026 Solidus 3D Modeling. All Rights Reserved.</p>
+        <p>Professional 3D Modeling &amp; CAD Design Services. <span style="color:var(--blue2)">Worldwide.</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• SCRIPTS â•â•â•â• -->
+  <script>
+    /* â”€â”€ Nav scroll â”€â”€ */
+    (function(){
+      var nav         = document.getElementById('nav');
+      var hbtn        = document.getElementById('hbtn');
+      var mob         = document.getElementById('mob');
+      var logoDefault  = document.getElementById('logo-default');
+      var logoScrolled = document.getElementById('logo-scrolled');
+      function syncNav(){
+        if(!nav){ return; }
+        var scrolled = window.scrollY > 40;
+        nav.classList.toggle('sc', scrolled);
+        if(logoDefault)  logoDefault.style.display  = scrolled ? 'none'  : 'block';
+        if(logoScrolled) logoScrolled.style.display = scrolled ? 'block' : 'none';
+      }
+      function closeNav(){
+        if(mob){ mob.classList.remove('open'); }
+        if(hbtn){ hbtn.setAttribute('aria-expanded','false'); }
+      }
+      window.cn = closeNav;
+      window.addEventListener('scroll', syncNav, { passive:true });
+      syncNav();
+      if(hbtn && mob){
+        hbtn.addEventListener('click', function(){
+          var open = mob.classList.toggle('open');
+          hbtn.setAttribute('aria-expanded', String(open));
+        });
+      }
+    })();
+
+    /* â”€â”€ Dynamic content based on ?action= query param â”€â”€ */
+    (function(){
+      var params = new URLSearchParams(window.location.search);
+      var action = params.get('action') || 'contact';
+
+      var heading  = document.getElementById('ty-heading');
+      var eyebrow  = document.getElementById('ty-eyebrow');
+      var desc     = document.getElementById('ty-desc');
+
+      if(action === 'login'){
+        eyebrow.textContent = 'Login Successful';
+        heading.innerHTML   = 'Welcome <span>Back!</span>';
+        desc.textContent    = 'You have successfully signed in to your Solidus.3D client account. Your dashboard is ready â€” manage quotes, track projects, and connect with our team.';
+      } else if(action === 'register'){
+        eyebrow.textContent = 'Account Created';
+        heading.innerHTML   = 'You\'re <span>All Set!</span>';
+        desc.textContent    = 'Your Solidus.3D account has been created successfully. Our team will verify your account and you\'ll receive a welcome email shortly with next steps.';
+      } else {
+        /* contact / default */
+        eyebrow.textContent = 'Message Sent';
+        heading.innerHTML   = 'Thank <span>You!</span>';
+        desc.textContent    = 'We\'ve received your inquiry and our engineering team will respond within 24 business hours. In the meantime, explore our services below.';
+      }
+    })();
+
+    /* â”€â”€ Google Ads Conversion Tracking â”€â”€
+       âš  REPLACE send_to value with your real Conversion ID / Label
+    â”€â”€ */
+    (function(){
+      if(typeof gtag === 'function'){
+        var params = new URLSearchParams(window.location.search);
+        var action = params.get('action') || 'contact';
+
+        // Fire a conversion event for every thank-you page load
+        gtag('event', 'conversion', {
+          'send_to': 'AW-XXXXXXXXXX/XXXXXXXXXXXXXXX',  // â† replace this
+          'value': 1.0,
+          'currency': 'INR',
+          'transaction_id': action + '_' + Date.now()
+        });
+
+        // Optional: fire separate events per action type
+        gtag('event', 'form_submit', {
+          'event_category': 'Lead',
+          'event_label': action,
+          'value': 1
+        });
+      }
+    })();
+
+    /* â”€â”€ Redirect countdown â”€â”€ */
+    (function(){
+      var countEl = document.getElementById('countdown');
+      var seconds = 10;
+      var timer = setInterval(function(){
+        seconds--;
+        if(countEl) countEl.textContent = seconds;
+        if(seconds <= 0){
+          clearInterval(timer);
+          window.location.href = 'index.html';
+        }
+      }, 1000);
+
+      // Stop countdown if user clicks any link (they're navigating themselves)
+      document.querySelectorAll('a').forEach(function(a){
+        a.addEventListener('click', function(){ clearInterval(timer); });
+      });
+    })();
+  </script>
+
+</body>
+</html>

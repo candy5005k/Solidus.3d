@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>3D CAD Modeling, CNC Machining &amp; 3D Printing Services | Solidus.3D</title>
+  <meta name="description" content="Solidus.3D offers 3D CAD modeling, reverse engineering, 2D to 3D conversion, 3D printing, CNC machining support, vacuum casting, profile cutting, and rapid prototyping services for product teams worldwide.">
+  <meta name="keywords" content="3D CAD modeling services, CNC machining services, 3D printing services, reverse engineering, rapid prototyping, vacuum casting, profile cutting, sheet metal fabrication support">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://solidus3dmodeling.com/services/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","name":"Solidus.3D Services","itemListElement":[{"@type":"Service","position":1,"name":"3D CAD Modeling"},{"@type":"Service","position":2,"name":"Reverse Engineering"},{"@type":"Service","position":3,"name":"2D to 3D Conversion"},{"@type":"Service","position":4,"name":"3D Printing Service"},{"@type":"Service","position":5,"name":"CNC Machining Support"},{"@type":"Service","position":6,"name":"Vacuum Casting"},{"@type":"Service","position":7,"name":"Profile Cutting"},{"@type":"Service","position":8,"name":"Rapid Prototyping Support"}]}
+  </script>
+  <style>
+    :root{
+      --blue:#2563eb;
+      --blue2:#3b82f6;
+      --blue-dk:#1d4ed8;
+      --blue-lt:#dbeafe;
+      --ink:#111827;
+      --body:#4b5563;
+      --mid:#6b7280;
+      --line:rgba(17,24,39,.1);
+      --white:#fff;
+      --panel:rgba(255,255,255,.9);
+      --shadow:0 24px 60px rgba(15,23,42,.1);
+      --dark:#0f172a;
+      --paper:#ffffff;
+      --D:'Bebas Neue',sans-serif;
+      --B:'Plus Jakarta Sans',system-ui,sans-serif;
+      --S:'Plus Jakarta Sans',system-ui,sans-serif;
+      --M:'DM Mono',monospace;
+      --radius:12px;
+      --radius-sm:6px;
+      --ease:cubic-bezier(.22,1,.36,1);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      padding-top:72px;
+      font-family:var(--S);
+      color:var(--body);
+      background:
+        radial-gradient(circle at top left,rgba(37,99,235,.14),transparent 35%),
+        linear-gradient(180deg,#eef5ff 0%,#fff 35%,#f8fbff 100%);
+    }
+    img{max-width:100%;display:block}
+    a{color:inherit}
+    .wrap{width:min(1180px,calc(100% - 32px));margin:0 auto}
+
+    .mob{
+      position:fixed;
+      top:72px;
+      left:0;
+      right:0;
+      bottom:0;
+      background:var(--white);
+      z-index:750;
+      display:flex;
+      flex-direction:column;
+      padding:40px 32px;
+      gap:20px;
+      transform:translateX(100%);
+      transition:transform .35s ease;
+    }
+    .mob.open{transform:translateX(0)}
+    .mob a{
+      font-family:var(--D);
+      font-size:2.2rem;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      color:var(--ink);
+      text-decoration:none;
+    }
+    .mob a:hover{color:var(--blue)}
+
+    nav{
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      z-index:800;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+      padding:0 48px;
+      height:72px;
+      background:rgba(255,255,255,.97);
+      backdrop-filter:blur(20px);
+      border-bottom:1px solid rgba(37,99,235,.08);
+      transition:box-shadow .3s,background .3s,border-color .3s;
+    }
+    nav.sc{
+      box-shadow:0 4px 32px rgba(37,99,235,.25);
+      background:var(--blue);
+      border-color:rgba(37,99,235,.4);
+    }
+    .logo-link{
+      text-decoration:none;
+      display:flex;
+      align-items:center;
+      flex-shrink:0;
+    }
+    .logo-link img{
+      display:block;
+      height:44px;
+      width:auto;
+      }
+    
+    .nl{
+      display:flex;
+      gap:2px;
+      list-style:none;
+      margin:0;
+      padding:0;
+      align-items:center;
+    }
+    .nl > li{position:relative}
+    .nl > li > a{
+      font-family:var(--M);
+      font-size:12px;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      color:var(--mid);
+      text-decoration:none;
+      padding:8px 14px;
+      display:flex;
+      align-items:center;
+      gap:5px;
+      border-radius:var(--radius-sm);
+      font-weight:500;
+      transition:color .2s,background .2s;
+    }
+    .nl > li > a:hover,
+    .nl > li > a.active{
+      color:var(--blue);
+      background:var(--blue-lt);
+    }
+    nav.sc .nl > li > a{
+      color:rgba(255,255,255,.75);
+    }
+    nav.sc .nl > li > a:hover,
+    nav.sc .nl > li > a.active{
+      color:var(--white);
+      background:rgba(255,255,255,.15);
+    }
+    .nav-arr{
+      font-size:8px;
+      transition:transform .2s;
+      opacity:.5;
+    }
+    .nl > li:hover .nav-arr{transform:rotate(180deg)}
+    .dd{
+      position:absolute;
+      top:calc(100% + 14px);
+      left:50%;
+      transform:translateX(-50%) translateY(10px);
+      background:#fff;
+      border:1px solid rgba(17,24,39,.08);
+      box-shadow:0 32px 80px rgba(15,23,42,.18), 0 4px 16px rgba(37,99,235,.07);
+      width:820px;
+      max-width:95vw;
+      padding:0;
+      opacity:0;
+      visibility:hidden;
+      transition:opacity .28s cubic-bezier(.4,0,.2,1), transform .28s cubic-bezier(.4,0,.2,1), visibility .28s;
+      z-index:700;
+      border-radius:18px;
+      overflow:hidden;
+    }
+    .nl > li:hover .dd{
+      opacity:1;
+      visibility:visible;
+      transform:translateX(-50%) translateY(0);
+    }
+    .dd-inner{
+      display:grid;
+      grid-template-columns:1fr 1fr 1fr;
+      gap:0;
+    }
+    .dd-col{
+      padding:22px 18px 20px;
+      border-right:1px solid rgba(17,24,39,.08);
+    }
+    .dd-col:last-child{border-right:none;}
+    .dd-col-head{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      padding:0 4px 12px;
+      margin-bottom:4px;
+      border-bottom:1px solid #dbeafe;
+      font-size:9.5px;
+      letter-spacing:.2em;
+      text-transform:uppercase;
+      color:#2563eb;
+      font-weight:600;
+    }
+    .dd-col-head svg{width:14px;height:14px;flex-shrink:0;}
+    .dd a{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:9px 10px;
+      font-size:13.5px;
+      color:#111827;
+      text-decoration:none;
+      transition:background .15s, color .15s, transform .15s, border-color .15s;
+      font-weight:500;
+      border-radius:10px;
+      border:1px solid transparent;
+    }
+    .dd a:hover{
+      background:#dbeafe;
+      color:#2563eb;
+      border-color:rgba(37,99,235,.14);
+      transform:translateX(3px);
+    }
+    .dd svg{width:16px;height:16px;flex-shrink:0;}
+    .dd-footer{
+      background: linear-gradient(90deg,#eff6ff 0%,#e0edff 100%);
+      border-top:1px solid #dbeafe;
+      padding:11px 24px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .dd-footer a{
+      font-size:10.5px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:#2563eb;
+      text-decoration:none;
+      display:flex;
+      align-items:center;
+      gap:6px;
+      font-weight:600;
+      transition:gap .15s,opacity .15s;
+    }
+    .dd-footer a:hover{gap:10px;opacity:.85;}
+    .dd-footer span{font-size:11px;color:#6b7280;font-weight:400;letter-spacing:0;text-transform:none;}
+    .dd-div{
+      height:1px;
+      background:rgba(17,24,39,.08);
+      margin:5px 0;
+    }
+    .nbtn{
+      background:var(--blue);
+      color:var(--white);
+      font-family:var(--M);
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      padding:12px 24px;
+      border:none;
+      cursor:pointer;
+      text-decoration:none;
+      border-radius:var(--radius-sm);
+      font-weight:500;
+      display:inline-block;
+      transition:background .2s,transform .15s,color .2s;
+    }
+    .nbtn:hover{
+      background:var(--blue-dk);
+      color:var(--white);
+      transform:translateY(-1px);
+    }
+    nav.sc .nbtn{
+      background:var(--white);
+      color:var(--blue);
+    }
+    .ham{
+      display:none;
+      flex-direction:column;
+      gap:5px;
+      background:none;
+      border:none;
+      cursor:pointer;
+      padding:4px;
+    }
+    .ham span{
+      display:block;
+      width:24px;
+      height:2px;
+      background:var(--ink);
+      transition:all .3s;
+    }
+    nav.sc .ham span{background:var(--white)}
+
+    .hero{padding:64px 0 48px}
+    .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:32px;align-items:center}
+    .eyebrow,.chip{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;font-family:var(--M);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+    .eyebrow{background:rgba(37,99,235,.1);color:var(--blue);margin-bottom:20px}
+    .chip{background:rgba(255,255,255,.84);border:1px solid rgba(37,99,235,.12);color:var(--mid)}
+    .chip:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--blue)}
+    /* --- Typography aligned with index.html --- */
+    h1,h2,h3,h4{
+      margin:0;
+      color:var(--ink);
+      line-height:1.1;
+      font-family:var(--B);
+      font-weight:800;
+      letter-spacing:-.03em;
+    }
+    h1{font-size:clamp(2rem,3.8vw,3.8rem);max-width:13ch;margin-bottom:20px}
+    h1 span{color:var(--blue)}
+    h2{font-size:clamp(1.9rem,3.2vw,3rem);max-width:16ch}
+    h2 span{color:var(--blue)}
+    h3{font-size:clamp(1.35rem,2vw,1.85rem)}
+    h4{font-size:1.1rem;font-weight:700}
+    p{font-family:var(--B);line-height:1.8;font-size:.98rem}
+    .hero p{
+      font-size:clamp(1.05rem,1.8vw,1.3rem);
+      max-width:600px;
+      margin:0 0 36px;
+      color:var(--mid);
+      font-weight:400;
+      line-height:1.75;
+      font-family:var(--B);
+    }
+    .actions,.chips,.tags{display:flex;flex-wrap:wrap;gap:12px}
+    .actions{margin-top:28px}
+    .hero .actions{margin-top:0}
+    .btn1,.btn2{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
+      transition:transform .2s var(--ease),box-shadow .2s,background .2s,color .2s,border-color .2s;
+      font-family:var(--B);
+      font-size:16px;
+      font-weight:600;
+    }
+    .btn1{
+      padding:16px 36px;
+      border-radius:var(--radius-sm);
+      background:var(--blue);
+      color:#fff;
+      box-shadow:0 4px 20px rgba(37,99,235,.3);
+    }
+    .btn1:hover{
+      transform:translateY(-2px);
+      box-shadow:0 24px 40px rgba(37,99,235,.3);
+      background:var(--blue-dk);
+      color:#fff;
+    }
+    .btn2{
+      padding:15px 32px;
+      border-radius:var(--radius-sm);
+      background:transparent;
+      border:2px solid var(--line);
+      color:var(--ink);
+    }
+    .btn2:hover{
+      transform:translateY(-2px);
+      border-color:var(--blue);
+      color:var(--blue);
+      background:var(--blue-lt);
+    }
+    .chips{margin-top:24px}
+    .visual{position:relative;min-height:460px;border-radius:32px;background:linear-gradient(180deg,rgba(255,255,255,.9),rgba(255,255,255,.62));border:1px solid rgba(37,99,235,.1);box-shadow:var(--shadow);overflow:hidden}
+    .part-l,.part-r{position:absolute;width:min(48%,300px)}
+    .part-l{left:-14px;bottom:18px}
+    .part-r{right:-14px;bottom:34px}
+    .visual-card{position:absolute;right:22px;top:22px;max-width:240px;padding:18px 20px;border-radius:22px;background:rgba(255,255,255,.94);border:1px solid rgba(37,99,235,.12);box-shadow:0 20px 30px rgba(15,23,42,.08)}
+    .visual-card span{display:block;font-family:var(--M);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+    .visual-card strong{color:var(--ink);line-height:1.5;font-family:var(--B)}
+
+    /* --- Section & layout --- */
+    section{padding:52px 0}
+    .sec-alt{background:rgba(248,251,255,.7)}
+    .head{display:grid;grid-template-columns:1fr .95fr;gap:22px;align-items:end;margin-bottom:36px}
+    .k{display:inline-block;font-family:var(--M);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);margin-bottom:14px}
+    .grid3,.grid2,.grid4,.faq{display:grid;gap:20px}
+    .grid3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .grid2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid4{grid-template-columns:repeat(4,minmax(0,1fr))}
+
+    /* --- Category banner (full-width heading row) --- */
+    .cat-banner{
+      display:grid;
+      grid-template-columns:1fr auto;
+      align-items:center;
+      gap:24px;
+      padding:32px 36px;
+      border-radius:24px;
+      margin-bottom:28px;
+      position:relative;
+      overflow:hidden;
+    }
+    .cat-banner.cb1{background:linear-gradient(120deg,#eef5ff 0%,#dbeafe 100%);border:1px solid rgba(37,99,235,.14)}
+    .cat-banner.cb2{background:linear-gradient(120deg,#f0f9ff 0%,#e0f2fe 100%);border:1px solid rgba(14,165,233,.14)}
+    .cat-banner.cb3{background:linear-gradient(120deg,#f5f3ff 0%,#ede9fe 100%);border:1px solid rgba(124,58,237,.14)}
+    .cat-banner-img{
+      width:180px;
+      height:140px;
+      object-fit:contain;
+      border-radius:14px;
+      flex-shrink:0;
+    }
+    .cat-banner .k{margin-bottom:8px}
+    .cat-banner h2{font-size:clamp(2rem,4vw,3.4rem);max-width:none;margin-bottom:10px}
+    .cat-banner p{font-size:.93rem;color:var(--mid);max-width:58ch;margin:0}
+
+    /* --- Service item cards --- */
+    .card,.band{background:rgba(255,255,255,.92);border:1px solid rgba(37,99,235,.1);border-radius:22px;box-shadow:0 8px 32px rgba(15,23,42,.07)}
+    .card{padding:26px 26px 22px;position:relative;overflow:hidden;transition:transform .2s var(--ease),box-shadow .2s}
+    .card:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(37,99,235,.13)}
+    .card[data-no]:before{content:attr(data-no);position:absolute;right:20px;top:12px;font-family:var(--D);font-size:3.2rem;letter-spacing:.04em;color:rgba(37,99,235,.08);line-height:1}
+    .svc-icon{width:44px;height:44px;border-radius:12px;background:var(--blue-lt);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+    .svc-icon svg{width:22px;height:22px}
+    .card h3{font-size:1.7rem;letter-spacing:.02em;margin-bottom:10px;color:var(--ink)}
+    .card p{font-size:.9rem;color:var(--body);line-height:1.7;margin:0 0 14px}
+    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+    .tag{padding:6px 10px;border-radius:999px;background:rgba(37,99,235,.07);color:var(--blue-dk);font-family:var(--M);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase}
+
+    /* --- CTA band --- */
+    .band{padding:40px 36px;display:grid;grid-template-columns:1fr 1fr;gap:24px;background:linear-gradient(135deg,rgba(37,99,235,.96),rgba(59,130,246,.9));color:#fff;border:none;border-radius:28px}
+    .band h2{color:#fff;max-width:18ch;font-size:clamp(2rem,4vw,3.2rem)}
+    .band p{color:rgba(255,255,255,.82);margin:0 0 20px;font-family:var(--B)}
+    .band .btn2{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.22);color:#fff}
+
+    /* --- Industry pills --- */
+    .ind-grid{display:flex;flex-wrap:wrap;gap:14px}
+    .ind-pill{
+      display:flex;align-items:center;gap:10px;
+      padding:14px 20px;
+      background:#fff;
+      border:1px solid rgba(37,99,235,.12);
+      border-radius:14px;
+      font-family:var(--B);
+      font-size:.88rem;
+      font-weight:600;
+      color:var(--ink);
+      box-shadow:0 4px 14px rgba(15,23,42,.05);
+      transition:background .15s,transform .15s;
+    }
+    .ind-pill:hover{background:var(--blue-lt);transform:translateY(-2px)}
+    .ind-pill svg{width:18px;height:18px;flex-shrink:0}
+
+    footer{background:var(--dark);padding:56px 48px 28px;position:relative;z-index:1;margin-top:22px}
+    .fti{max-width:1200px;margin:0 auto;padding:0 16px}
+    .ftt{
+      display:grid;
+      grid-template-columns:2fr 1fr 1fr 1fr;
+      gap:40px;
+      padding-bottom:44px;
+      border-bottom:1px solid rgba(255,255,255,.07);
+      min-width:0;
+      overflow:hidden;
+    }
+    .fbp{
+      font-size:.9rem;
+      color:rgba(255,255,255,.35);
+      font-weight:400;
+      line-height:1.7;
+      max-width:320px;
+      margin-top:14px;
+    }
+    .fc5 h5{
+      font-family:var(--M);
+      font-size:11px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--blue2);
+      margin:0 0 18px;
+      font-weight:500;
+    }
+    .fc5 ul{
+      list-style:none;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      margin:0;
+      padding:0;
+    }
+    .fc5 a,
+    footer a{
+      font-size:.9rem;
+      color:rgba(255,255,255,.35);
+      text-decoration:none;
+      transition:color .2s;
+      font-weight:400;
+      display:inline-block;
+    }
+    .fc5 a:hover,
+    footer a:hover{color:var(--white)}
+    .ftb{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding-top:24px;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+    .ftb p{
+      margin:0;
+      font-family:var(--M);
+      font-size:11px;
+      color:rgba(255,255,255,.2);
+      font-weight:500;
+    }
+
+
+    @media (max-width:1100px){
+      nav{padding:0 24px}
+      .nl,.nbtn{display:none}
+      .ham{display:flex}
+      .hero-grid,.head,.band,.ftt{grid-template-columns:1fr}
+      .grid3,.grid4{grid-template-columns:repeat(2,minmax(0,1fr))}
+      footer{padding:40px 24px 24px}
+    }
+    @media (max-width:760px){
+      .grid2,.grid3,.grid4,.faq{grid-template-columns:1fr}
+      .visual{min-height:360px}
+      .part-l,.part-r{width:52%}
+      .ftb{flex-direction:column;text-align:center}
+    }
+  </style>
+</head>
+<body>
+  <div class="mob" id="mob">
+    <a href="./index.html" onclick="cn()">Services</a>
+    <a href="../index.html#portfolio" onclick="cn()">Our Work</a>
+    <a href="../index.html#why" onclick="cn()">Why Us</a>
+    <a href="../index.html#process" onclick="cn()">Process</a>
+    <a href="../index.html#testi" onclick="cn()">Reviews</a>
+    <a href="../index.html#faq" onclick="cn()">FAQ</a>
+    <a href="../index.html#contact" class="nbtn" style="margin-top:8px;text-align:center" onclick="cn()">Get a Quote</a>
+  </div>
+
+  <nav id="nav" role="navigation" aria-label="Main navigation">
+    <a href="../index.html" class="logo-link" aria-label="Solidus 3D Modeling Home">
+      <img id="logo-default" src="../assets/images/logo-solidus-main.png" alt="Solidus 3D Modeling" height="44" style="display:block;width:auto">
+      <img id="logo-scrolled" src="../assets/images/logo-solidus-light.png" alt="Solidus 3D Modeling" height="44" style="display:none;width:auto">
+    </a>
+    <ul class="nl" role="list">
+      <li>
+        <a class="active" href="./index.html">Services <span class="nav-arr">&#9660;</span></a>
+        <div class="dd" role="menu">
+          <div class="dd-inner">
+            <!-- Col 1: Design & CAD -->
+            <div class="dd-col">
+              <div class="dd-col-head">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#2563eb" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Design &amp; CAD
+              </div>
+              <a href="#cad-modeling"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="#2563eb" stroke-width="1.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"/></svg>Design Services</a>
+              <a href="#cad-modeling"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="#2563eb" stroke-width="1.5"/><path d="M8 12h8M12 8v8" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"/></svg>3D CAD Modeling</a>
+              <a href="#reverse-engineering"><svg viewBox="0 0 24 24" fill="none"><path d="M7 7h10a4 4 0 010 8h-1" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"/><path d="M10 19l-4-4 4-4" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="17" cy="7" r="3" stroke="#2563eb" stroke-width="1.5"/></svg>Reverse Engineering</a>
+              <a href="#2d-to-3d-conversion"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="7" width="8" height="10" rx="1" stroke="#2563eb" stroke-width="1.5"/><path d="M14 5l6 7-6 7M14 12h6" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>2D to 3D Conversion</a>
+              <a href="#sculpture"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2C9 5 6 9 6 13a6 6 0 0012 0c0-4-3-8-6-11z" stroke="#2563eb" stroke-width="1.5" stroke-linejoin="round"/></svg>Sculpture Designs</a>
+              <a href="#architecture"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="10" height="14" rx="1.5" stroke="#2563eb" stroke-width="1.5"/><path d="M18 7v10M16 9l4 4-4 4" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Architecture (2D/3D Plans)</a>
+            </div>
+            <!-- Col 2: 3D Printing & Mfg -->
+            <div class="dd-col">
+              <div class="dd-col-head">
+                <svg viewBox="0 0 24 24" fill="none"><rect x="4" y="14" width="16" height="6" rx="1" stroke="#2563eb" stroke-width="1.5"/><path d="M8 14V5h8v9" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"/></svg>
+                3D Printing &amp; Manufacturing
+              </div>
+              <a href="#3d-printing-service"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="14" width="16" height="6" rx="1" stroke="#2563eb" stroke-width="1.5"/><path d="M8 14V5h8v9" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"/><circle cx="17" cy="17" r="1.5" fill="#2563eb" opacity=".7"/></svg>3D Printing Service</a>
+              <a href="#cnc-machining-support"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="12" height="8" rx="1.5" stroke="#2563eb" stroke-width="1.5"/><path d="M16 10h4M20 8v4M8 16v3M6 19h8" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"/></svg>CNC Machining Support</a>
+              <a href="#vacuum-casting"><svg viewBox="0 0 24 24" fill="none"><path d="M6 5h12v4l-3 4v5l-6 1v-6L6 9V5z" stroke="#2563eb" stroke-width="1.5" stroke-linejoin="round"/></svg>Vacuum Casting</a>
+              <a href="#profile-cutting"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="10" height="14" rx="1.5" stroke="#2563eb" stroke-width="1.5"/><path d="M18 7v10M16 9l4 4-4 4" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Profile Cutting</a>
+              <a href="#machine"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="7" width="8" height="10" rx="1" stroke="#2563eb" stroke-width="1.5"/><path d="M14 5l6 7-6 7M14 12h6" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Machine Process / Plant Design</a>
+            </div>
+            <!-- Col 3: Specialty -->
+            <div class="dd-col">
+              <div class="dd-col-head">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="#2563eb" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                Specialty &amp; Creative
+              </div>
+              <a href="#trophy"><svg viewBox="0 0 24 24" fill="none"><path d="M7 4h10v8a5 5 0 01-10 0V4z" stroke="#2563eb" stroke-width="1.5" stroke-linejoin="round"/><path d="M7 7H4a2 2 0 000 4h3M17 7h3a2 2 0 010 4h-3M12 17v3M9 20h6" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"/></svg>Trophy Design</a>
+              <a href="#display"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" stroke="#2563eb" stroke-width="1.5"/><path d="M8 21h8M12 17v4" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"/></svg>Display Modeling</a>
+              <a href="#showcase"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="12" height="8" rx="1.5" stroke="#2563eb" stroke-width="1.5"/><path d="M16 10h4M20 8v4M8 16v3M6 19h8" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"/></svg>Showcase Design</a>
+              <a href="#character"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="#2563eb" stroke-width="1.5"/><path d="M4 20c0-4 3.58-7 8-7s8 3 8 7" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"/></svg>Character Modeling</a>
+            </div>
+          </div><!-- /.dd-inner -->
+          <div class="dd-footer">
+            <a href="./index.html">Browse All Services &rarr;</a>
+            <span>Trusted by 200+ global clients</span>
+          </div>
+        </div>
+      </li>
+      <li><a href="../index.html#portfolio">Our Work</a></li>
+      <li><a href="../index.html#why">Why Us</a></li>
+      <li><a href="../index.html#process">Process</a></li>
+      <li><a href="../index.html#testi">Reviews</a></li>
+      <li><a href="../index.html#faq">FAQ</a></li>
+    </ul>
+    <a href="../index.html#contact" class="nbtn">Get a Quote</a>
+    <button class="ham" id="hbtn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Custom Manufacturing &amp; Product Development</div>
+        <h1>Professional 3D Modeling<br><span>&amp; CAD Design Services.</span></h1>
+        <p>From reverse engineering and 3D printing to CNC machining, vacuum casting, and profile cutting, we deliver precise, manufacturing-ready files for manufacturers, startups, and product teams. NDA-protected. Fast delivery.</p>
+        <div class="actions">
+          <a class="btn1" href="../login.php">Get an Instant Quote</a>
+          <a class="btn2" href="../index.html#contact">Talk to an Engineer</a>
+        </div>
+        <div class="chips">
+          <span class="chip">3D CAD Modeling</span><span class="chip">Reverse Engineering</span><span class="chip">CNC Machining</span><span class="chip">3D Printing</span><span class="chip">Vacuum Casting</span><span class="chip">Profile Cutting</span><span class="chip">Rapid Prototyping</span>
+        </div>
+      </div>
+      <div class="visual" aria-hidden="true">
+        <div class="visual-card"><span>Fast Handoff</span><strong>Quote-ready files, cleaner geometry, and faster movement into prototyping or production.</strong></div>
+        <img class="part-l" src="../assets/images/hero/hero1.png" alt="">
+        <img class="part-r" src="../assets/images/hero/hero3.png" alt="">
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+         CATEGORY 1 â€” DESIGN & CAD
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+    <section id="cad-services">
+      <div class="wrap">
+
+        <!-- Category Banner -->
+        <div class="cat-banner cb1">
+          <div>
+            <span class="k">Category 01 &mdash; Design &amp; CAD</span>
+            <h2>Design Services &amp;<br><span>3D CAD Modeling</span></h2>
+            <p>Precision engineering files built for quoting, validation, and production. From 2D drawings to full parametric assemblies â€” we convert your ideas into manufacture-ready geometry.</p>
+          </div>
+          <img class="cat-banner-img" src="../assets/images/svc_cad_design.png" alt="CAD & Design Services">
+        </div>
+
+        <!-- Service Cards -->
+        <div class="grid3">
+
+          <article class="card" id="design-services" data-no="01">
+            <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="#2563eb" stroke-width="1.8"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+            <h3>Design Services</h3>
+            <p>End-to-end product design from concept sketches to final production geometry, aligned for manufacturability and real engineering review.</p>
+            <div class="tags"><span class="tag">Concept to CAD</span><span class="tag">Product Design</span><span class="tag">DFM</span></div>
+          </article>
+
+          <article class="card" id="cad-modeling" data-no="02">
+            <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="#2563eb" stroke-width="1.8"/><path d="M8 12h8M12 8v8" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+            <h3>3D CAD Modeling</h3>
+            <p>High-accuracy CAD for parts, assemblies, housings, and prototype components aligned for design review, prototyping, and vendor quoting.</p>
+            <div class="tags"><span class="tag">STEP</span><span class="tag">IGES</span><span class="tag">Parasolid</span><span class="tag">Assemblies</span></div>
+          </article>
+
+          <article class="card" id="reverse-engineering" data-no="03">
+            <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M7 7h10a4 4 0 010 8h-1" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round"/><path d="M10 19l-4-4 4-4" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <h3>Reverse Engineering</h3>
+            <p>Legacy or worn parts converted into editable CAD from measurements, photos, or scan data for redesigns and replacements.</p>
+            <div class="tags"><span class="tag">Scan to CAD</span><span class="tag">STL to STEP</span><span class="tag">Legacy Parts</span></div>
+          </article>
+
+          <article class="card" id="2d-to-3d-conversion" data-no="04">
+            <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="7" width="8" height="10" rx="1" stroke="#2563eb" stroke-width="1.8"/><path d="M14 5l6 7-6 7M14 12h6" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <h3>2D to 3D Conversion</h3>
+            <p>Drawings, PDFs, blueprints, and sketches converted into structured 3D models ready for modern engineering and manufacturing workflows.</p>
+            <div class="tags"><span class="tag">PDF to 3D</span><span class="tag">DWG</span><span class="tag">Blueprints</span></div>
+          </article>
+
+          <article class="card" id="sculpture" data-no="05">
+            <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2C9 5 6 9 6 13a6 6 0 0012 0c0-4-3-8-6-11z" stroke="#2563eb" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+            <h3>Sculpture Designs</h3>
+            <p>Detailed 3D sculpture models for art installations, custom gifts, brand statues, and decorative pieces â€” precise and print-ready.</p>
+            <div class="tags"><span class="tag">Art Sculpture</span><span class="tag">Custom Design</span><span class="tag">Print Ready</span></div>
+          </article>
+
+          <article class="card" id="architecture" data-no="06">
+            <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="10" height="14" rx="1.5" stroke="#2563eb" stroke-width="1.8"/><path d="M18 7v10M16 9l4 4-4 4" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <h3>Architecture (2D/3D Plans)</h3>
+            <p>2D floor plans and 3D architectural display models for buildings, interiors, and construction projects â€” ideal for client presentations and planning.</p>
+            <div class="tags"><span class="tag">Floor Plans</span><span class="tag">3D Display Model</span><span class="tag">BIM-ready</span></div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+         CATEGORY 2 â€” 3D PRINTING & MANUFACTURING
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+    <section id="manufacturing-services" class="sec-alt">
+      <div class="wrap">
+
+        <div class="cat-banner cb2">
+          <div>
+            <span class="k">Category 02 &mdash; 3D Printing &amp; Manufacturing</span>
+            <h2>Production &amp;<br><span>Manufacturing Services</span></h2>
+            <p>From 3D printing and CNC machining to vacuum casting and profile cutting â€” we prepare geometry that works right the first time on the shop floor.</p>
+          </div>
+          <img class="cat-banner-img" src="../assets/images/svc_manufacturing.png" alt="3D Printing & Manufacturing Services">
+        </div>
+
+        <div class="grid3">
+
+          <article class="card" id="3d-printing-service" data-no="07">
+            <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="14" width="16" height="6" rx="1" stroke="#2563eb" stroke-width="1.8"/><path d="M8 14V5h8v9" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+            <h3>3D Printing Service</h3>
+            <p>Models optimized for FDM, SLA, SLS, and resin printing with wall-thickness checks, support strategy, and printability review before handoff.</p>
+            <div class="tags"><span class="tag">FDM</span><span class="tag">SLA</span><span class="tag">SLS</span><span class="tag">Print Ready</span></div>
+          </article>
+
+          <article class="card" id="cnc-machining-support" data-no="08">
+            <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="12" height="8" rx="1.5" stroke="#2563eb" stroke-width="1.8"/><path d="M16 10h4M20 8v4M8 16v3M6 19h8" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+            <h3>CNC Machining Support</h3>
+            <p>Machining-friendly CAD for CNC milling and turning â€” geometry simplification, tolerance review, and design-for-manufacture analysis included.</p>
+            <div class="tags"><span class="tag">CNC Milling</span><span class="tag">CNC Turning</span><span class="tag">Tolerance Review</span></div>
+          </article>
+
+          <article class="card" id="vacuum-casting" data-no="09">
+            <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M6 5h12v4l-3 4v5l-6 1v-6L6 9V5z" stroke="#2563eb" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+            <h3>Vacuum Casting</h3>
+            <p>Master-pattern preparation for urethane casting used in low-volume validation, bridge production runs, and pre-launch demo batches.</p>
+            <div class="tags"><span class="tag">Urethane Casting</span><span class="tag">Low Volume</span><span class="tag">Bridge Production</span></div>
+          </article>
+
+          <article class="card" id="profile-cutting" data-no="10">
+            <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="10" height="14" rx="1.5" stroke="#2563eb" stroke-width="1.8"/><path d="M18 7v10M16 9l4 4-4 4" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <h3>Profile Cutting</h3>
+            <p>DXF-ready geometry for laser, plasma, and waterjet cutting â€” flat parts, sheet brackets, fabricated profiles, and panels export-ready.</p>
+            <div class="tags"><span class="tag">DXF</span><span class="tag">Laser Cutting</span><span class="tag">Waterjet</span><span class="tag">Flat Patterns</span></div>
+          </article>
+
+          <article class="card" id="machine" data-no="11">
+            <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="7" width="8" height="10" rx="1" stroke="#2563eb" stroke-width="1.8"/><path d="M14 5l6 7-6 7M14 12h6" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <h3>Machine Process / Whole Plant Design</h3>
+            <p>Complete 3D layout design for production lines, industrial machines, and whole-plant processes â€” supporting automation and facility planning projects.</p>
+            <div class="tags"><span class="tag">Plant Layout</span><span class="tag">Process Design</span><span class="tag">Industrial</span></div>
+          </article>
+
+          <article class="card" id="rapid-prototyping" data-no="12">
+            <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <h3>Rapid Prototyping Support</h3>
+            <p>We route your project into the right path â€” 3D printing, CNC, or casting â€” based on speed, finish, cost, geometry, and end-use requirements.</p>
+            <div class="tags"><span class="tag">Prototype Planning</span><span class="tag">Cost Analysis</span><span class="tag">Lead Time</span></div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+         CATEGORY 3 â€” SPECIALTY & CREATIVE
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+    <section id="specialty-services">
+      <div class="wrap">
+
+        <div class="cat-banner cb3">
+          <div>
+            <span class="k">Category 03 &mdash; Specialty &amp; Creative</span>
+            <h2>Specialty &amp;<br><span>Creative Modeling</span></h2>
+            <p>Beyond engineering â€” trophies, character models, display showcases, and bespoke creative pieces made with the same precision as production-grade CAD.</p>
+          </div>
+          <img class="cat-banner-img" src="../assets/images/svc_specialty.png" alt="Specialty & Creative Services">
+        </div>
+
+        <div class="grid3">
+
+          <article class="card" id="trophy" data-no="13">
+            <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M7 4h10v8a5 5 0 01-10 0V4z" stroke="#7c3aed" stroke-width="1.8" stroke-linejoin="round"/><path d="M7 7H4a2 2 0 000 4h3M17 7h3a2 2 0 010 4h-3M12 17v3M9 20h6" stroke="#7c3aed" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+            <h3>Trophy Design</h3>
+            <p>Custom award and trophy 3D models for corporate gifting, sports events, and competitions â€” fully editable and production-ready for casting or printing.</p>
+            <div class="tags"><span class="tag">Award Design</span><span class="tag">Corporate Gifting</span><span class="tag">Cast Ready</span></div>
+          </article>
+
+          <article class="card" id="display" data-no="14">
+            <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" stroke="#7c3aed" stroke-width="1.8"/><path d="M8 21h8M12 17v4" stroke="#7c3aed" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+            <h3>Display Modeling</h3>
+            <p>Photorealistic 3D display models for product showcases, retail presentation units, exhibition booths, and marketing visualizations.</p>
+            <div class="tags"><span class="tag">Retail Display</span><span class="tag">Exhibition</span><span class="tag">Visualization</span></div>
+          </article>
+
+          <article class="card" id="showcase" data-no="15">
+            <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="12" height="8" rx="1.5" stroke="#7c3aed" stroke-width="1.8"/><path d="M16 10h4M20 8v4M8 16v3M6 19h8" stroke="#7c3aed" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+            <h3>Showcase Design</h3>
+            <p>Custom showcase and display cabinet 3D designs for product launches, trade shows, museum exhibits, and branded retail environments.</p>
+            <div class="tags"><span class="tag">Trade Show</span><span class="tag">Branded Retail</span><span class="tag">Museum</span></div>
+          </article>
+
+          <article class="card" id="character" data-no="16">
+            <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="#7c3aed" stroke-width="1.8"/><path d="M4 20c0-4 3.58-7 8-7s8 3 8 7" stroke="#7c3aed" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+            <h3>Character Modeling</h3>
+            <p>Detailed 3D character models for animation, gaming assets, collectibles, toys, mascots, and figurine production â€” sculpted or hard-surface.</p>
+            <div class="tags"><span class="tag">Animation</span><span class="tag">Figurines</span><span class="tag">Game Assets</span><span class="tag">Toys</span></div>
+          </article>
+
+          <article class="card" id="product-rendering" data-no="17">
+            <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="#7c3aed" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+            <h3>Product Rendering &amp; Visualization</h3>
+            <p>Marketing-grade product stills built from accurate geometry â€” for catalogues, ecommerce listings, investor decks, and approval presentations.</p>
+            <div class="tags"><span class="tag">Product Renders</span><span class="tag">Ecommerce</span><span class="tag">Pitch Decks</span></div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Industries -->
+    <section class="sec-alt">
+      <div class="wrap">
+        <div class="head">
+          <div><span class="k">Industries We Support</span><h2>Aligned with how product teams buy manufacturing support.</h2></div>
+          <p>Our capabilities span automotive, robotics, consumer products, industrial equipment, architecture, media, and hardware startups worldwide.</p>
+        </div>
+        <div class="ind-grid">
+          <div class="ind-pill"><svg viewBox="0 0 24 24" fill="none"><circle cx="5.5" cy="17.5" r="2.5" stroke="#2563eb" stroke-width="1.5"/><circle cx="18.5" cy="17.5" r="2.5" stroke="#2563eb" stroke-width="1.5"/><path d="M8 17.5h7M3 17.5H2v-5l3-5h10l4 5v5h-1" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Automotive</div>
+          <div class="ind-pill"><svg viewBox="0 0 24 24" fill="none"><rect x="8" y="4" width="8" height="10" rx="2" stroke="#2563eb" stroke-width="1.5"/><path d="M12 14v5M8 19h8M5 8H3M21 8h-2M5 12H3M21 12h-2" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"/></svg>Robotics</div>
+          <div class="ind-pill"><svg viewBox="0 0 24 24" fill="none"><path d="M6 2h12l2 7H4L6 2z" stroke="#2563eb" stroke-width="1.5" stroke-linejoin="round"/><rect x="4" y="9" width="16" height="13" rx="1" stroke="#2563eb" stroke-width="1.5"/></svg>Consumer Products</div>
+          <div class="ind-pill"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="7" width="8" height="10" rx="1" stroke="#2563eb" stroke-width="1.5"/><path d="M14 5l6 7-6 7M14 12h6" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Industrial Equipment</div>
+          <div class="ind-pill"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="10" height="14" rx="1.5" stroke="#2563eb" stroke-width="1.5"/><path d="M18 7v10M16 9l4 4-4 4" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Architecture &amp; Construction</div>
+          <div class="ind-pill"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="#2563eb" stroke-width="1.5"/><path d="M4 20c0-4 3.58-7 8-7s8 3 8 7" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"/></svg>Media &amp; Entertainment</div>
+          <div class="ind-pill"><svg viewBox="0 0 24 24" fill="none"><rect x="5" y="2" width="14" height="20" rx="2" stroke="#2563eb" stroke-width="1.5"/><path d="M9 7h6M9 11h6M9 15h4" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"/></svg>Hardware Startups</div>
+          <div class="ind-pill"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Defence &amp; Aerospace</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap band">
+        <div><span class="k" style="color:rgba(255,255,255,.74)">Need a faster handoff?</span><h2>Share your part, drawing, or idea. We will map the right service path.</h2></div>
+        <div>
+          <p>Whether you need 3D CAD modeling, CNC-ready geometry, reverse engineering, vacuum casting support, or a rapid prototype plan, we can route the project into the right workflow.</p>
+          <div class="actions" style="margin-top:0"><a class="btn1" href="../login.php">Request a Quote</a><a class="btn2" href="../index.html#contact">Start a Project</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="wrap">
+        <div class="head">
+          <div><span class="k">FAQ</span><h2>Questions buyers ask before they send files.</h2></div>
+          <p>Short answers focused on decision points that matter most before quoting or prototyping.</p>
+        </div>
+        <div class="faq grid2">
+          <article class="card"><h3>Which service should I choose first?</h3><p>If you only have a concept, drawing, or old part, start with 3D CAD modeling, 2D to 3D conversion, or reverse engineering. If you already have a model and need an output path, we usually route next into 3D printing, CNC machining, or vacuum casting support.</p></article>
+          <article class="card"><h3>Do you support manufacturing-ready files?</h3><p>Yes. We focus on geometry that works in quoting and production conversations, not just nice-looking models. That includes tolerances, part simplification, printability checks, and file exports used by vendors and internal teams.</p></article>
+          <article class="card"><h3>Can you help with low-volume production or bridge runs?</h3><p>Yes. Vacuum casting, profile cutting, and rapid prototyping support are useful when you need a bridge between concept work and larger-scale production.</p></article>
+          <article class="card"><h3>Do you also handle visual or architectural work?</h3><p>Yes. Architectural 3D modeling and product rendering stay on this page so buyers can find both production-focused and presentation-focused options in one place.</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="fti">
+      <div class="ftt">
+        <div>
+          <a href="../index.html" class="logo-link" style="display:inline-block;margin-bottom:14px">
+            <img src="../assets/images/logo-solidus-light.png" alt="Solidus 3D Modeling" height="42"
+              style="width:auto;display:block;mix-blend-mode:screen;filter:brightness(1.4) contrast(1.1)">
+          </a>
+          <p class="fbp">Manufacturing-focused CAD, CNC, rapid prototyping, and 3D printing support for product teams worldwide, built for faster production handoff.</p>
+        </div>
+        <div class="fc5">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="#cad-modeling">3D CAD Modeling</a></li>
+            <li><a href="#reverse-engineering">Reverse Engineering</a></li>
+            <li><a href="#3d-printing-service">3D Printing Service</a></li>
+            <li><a href="#cnc-machining-support">CNC Machining Support</a></li>
+            <li><a href="#vacuum-casting">Vacuum Casting</a></li>
+            <li><a href="#profile-cutting">Profile Cutting</a></li>
+          </ul>
+        </div>
+        <div class="fc5">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="../index.html#portfolio">Our Work</a></li>
+            <li><a href="../index.html#why">Why Solidus 3D</a></li>
+            <li><a href="../index.html#process">Our Process</a></li>
+            <li><a href="../index.html#testi">Reviews</a></li>
+            <li><a href="../index.html#faq">FAQ</a></li>
+            <li><a href="../index.html#contact">Get a Quote</a></li>
+          </ul>
+        </div>
+        <div class="fc5">
+          <h5>Legal</h5>
+          <ul>
+            <li><a href="../privacy.php">Privacy Policy</a></li>
+            <li><a href="../terms.php">Terms &amp; Conditions</a></li>
+            <li><a href="../nda.php">NDA Policy</a></li>
+            <li><a href="../sitemap.xml">Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="ftb">
+        <p>&copy; 2021-2026 Solidus 3D Modeling. All Rights Reserved.</p>
+        <p>Professional 3D Modeling &amp; CAD Design Services. <span style="color:var(--blue2)">Worldwide.</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      var nav = document.getElementById('nav');
+      var hbtn = document.getElementById('hbtn');
+      var mob  = document.getElementById('mob');
+      var logoDefault  = document.getElementById('logo-default');
+      var logoScrolled = document.getElementById('logo-scrolled');
+
+      function syncNav(){
+        if(!nav){ return; }
+        var scrolled = window.scrollY > 40;
+        nav.classList.toggle('sc', scrolled);
+        if(logoDefault)  logoDefault.style.display  = scrolled ? 'none'  : 'block';
+        if(logoScrolled) logoScrolled.style.display = scrolled ? 'block' : 'none';
+      }
+
+      function closeNav(){
+        if(mob){ mob.classList.remove('open'); }
+        if(hbtn){ hbtn.setAttribute('aria-expanded', 'false'); }
+      }
+
+      window.cn = closeNav;
+      window.addEventListener('scroll', syncNav, { passive:true });
+      syncNav();
+
+      if(hbtn && mob){
+        hbtn.addEventListener('click', function(){
+          var open = mob.classList.toggle('open');
+          hbtn.setAttribute('aria-expanded', String(open));
+        });
+      }
+    })();
+
+  </script>
+</body>
+</html>

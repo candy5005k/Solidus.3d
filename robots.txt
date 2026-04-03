@@ -1,0 +1,7 @@
+﻿User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /includes/
+Disallow: /config/
+
+Sitemap: https://solidus3dmodeling.com/sitemap.xml

@@ -1,0 +1,25 @@
+# Operating System Files
+*.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE & temporary files
+.vscode/
+.idea/
+*.swp
+*~
+.tmp
+.gemini/
+
+# Node/Composer dependencies (if applicable)
+node_modules/
+vendor/
+
+# User uploads & runtime files
+assets/uploads/*
+!assets/uploads/.gitkeep
+error_log
+
+# Local environment configuration
+.env
+.env.local
